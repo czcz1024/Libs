@@ -1,0 +1,11 @@
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\Uninf.Log.NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\Uninf.Log.NLog.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\Uninf.Log.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\Uninf.Log.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\NLog.xml
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\obj\Release\Uninf.Log.NLog.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\obj\Release\Uninf.Log.NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\obj\Release\Uninf.Log.NLog.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\Uninf.Log.xml
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Release\Uninf.Log.NLog.XML

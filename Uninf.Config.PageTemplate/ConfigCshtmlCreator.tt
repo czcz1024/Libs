@@ -1,0 +1,217 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.ComponentModel.DataAnnotations" #>
+
+
+<#@ parameter type="System.Type" name="configType"  #>
+<#@ parameter type="System.String" name="postAction"  #>
+@model <#=configType.FullName#>
+@{    
+    var currentSection=ViewBag.Section;
+	ViewBag.Title="配置管理";
+}
+<#
+    var configSections = configType.GetProperties();
+#>
+@if(ViewBag.Result==true){
+<div class="alert alert-success fade in">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+更新成功
+</div>
+}
+@if(ViewBag.Result==false){
+<div class="alert alert-danger fade in">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+更新失败
+</div>
+}
+<section class="container clearfix main_section" style="position: relative;">
+<div class="row">
+<div class="col-sm-12">
+<ul class="nav nav-tabs">
+<#
+    var ii = 0;
+    foreach (PropertyInfo section in configSections)
+    {
+        var displayName = section.GetDisplayName();
+        #>
+    <li class="@((currentSection=="<#=section.Name#>" || (<#=(ii==0).ToString().ToLower()#> && string.IsNullOrEmpty(currentSection)))?"active":"")">
+        <a href="#<#=section.Name#>" data-toggle="tab" class="@((currentSection=="<#=section.Name#>" || (<#=(ii==0).ToString().ToLower()#> && string.IsNullOrEmpty(currentSection)))?"active":"")"><#=displayName#></a>
+    </li>
+<#
+        ii++;
+    }
+#>
+</ul>
+<div class="tab-content">
+<#
+    var i = 0;
+    foreach (PropertyInfo section in configSections)
+    {
+#>
+    
+    <div style="border:1px solid #ccc" class="tab-pane @((currentSection=="<#=section.Name#>" || (<#=(i==0).ToString().ToLower()#> && string.IsNullOrEmpty(currentSection)))?"active":"")" id="<#=section.Name#>">
+<div class="alert alert-info"><i class="icon-reorder"></i><span class="panel-title">  <#=" "+section.GetDisplayName()#></span></div>
+<form role="form" class="form-horizontal" action="<#=postAction#>" method="post">
+        
+            
+            <input type="hidden" value="<#=section.Name#>" name="section" />
+<#
+            var propertys = section.PropertyType.GetProperties().Where(x=>x.GetCustomAttributes(true).All(y => y.GetType().Name != "XmlIgnoreAttribute"));
+            foreach (PropertyInfo property in propertys)
+            {
+                var pname = property.GetDisplayName();
+                
+#>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="<#=section.Name#>_<#=property.Name#>"><#=pname #></label>
+                    <div class="col-sm-4">
+<#
+                    if (property.PropertyType.IsSimpleType())
+                    {//简单类型
+                        if (property.PropertyType == typeof(bool))
+                        {
+                    #>
+                        <div class="make-switch" data-on-label="<i class='glyphicon glyphicon-ok'></i>" data-off-label="<i class='glyphicon glyphicon-remove'></i>">
+                            @Html.CheckBoxFor(x=>x.<#=section.Name#>.<#=property.Name#>)
+                        </div>
+<#
+                        }
+                        else if (property.PropertyType == typeof(string))
+                        {
+                            var dataType = property.GetDataType();
+                            if (dataType == DataType.Text)
+                            {
+                        #>@Html.TextBoxFor(x=>x.<#=section.Name #>.<#=property.Name #>,new{@class="form-control col-sm-8"})<#
+                            }
+                            else if (dataType == DataType.MultilineText)
+                            {
+                        #>@Html.TextAreaFor(x=>x.<#=section.Name #>.<#=property.Name #>,new{@class="form-control col-sm-8"})<#
+                            }
+                            else if (dataType == DataType.Password)
+                            {
+                        #>@Html.PasswordFor(x=>x.<#=section.Name #>.<#=property.Name #>,new{@class="form-control col-sm-8"})<#
+                            }
+                            else if (dataType == DataType.Custom)
+                            {
+                        #>暂不支持自定义数据类型<#
+                            }
+                        }
+                        else
+                        {
+                            #>
+                            @Html.TextBoxFor(x=>x.<#=section.Name #>.<#=property.Name #>,new{@class="form-control col-sm-8"})
+    <#
+                        }
+                        #>@Html.ValidationMessageFor(x=>x.<#=section.Name #>.<#=property.Name #>)<#
+                    }
+                    else if (property.PropertyType.IsEnum)
+                    {//枚举
+#>
+                        @Html.EnumDropDownListFor(x=>x.<#=section.Name #>.<#=property.Name #>,new{@class="form-control"})
+                        @Html.ValidationMessageFor(x=>x.<#=section.Name #>.<#=property.Name #>)
+<#
+                    }
+                    else if (property.PropertyType.IsEnumerable())
+                    {//数组
+                        var elementType = property.PropertyType.IsArray
+                                              ? property.PropertyType.GetElementType()
+                                              : property.PropertyType.GetGenericArguments().FirstOrDefault();
+
+                        #>
+                            <ul class="list-group">
+                                @{
+                                    var modelMeta<#=section.Name #>_<#=property.Name #>=ModelMetadata.FromStringExpression("<#=section.Name #>.<#=property.Name #>",Html.ViewData);
+                                    var dic<#=section.Name #>_<#=property.Name #>=Html.GetUnobtrusiveValidationAttributes("<#=section.Name #>.<#=property.Name #>",modelMeta<#=section.Name #>_<#=property.Name #>);
+                                    dic<#=section.Name #>_<#=property.Name #>["class"]="form-control";
+                                }
+                                
+<#
+                            if (elementType.IsSimpleType())
+                            {//简单数组
+                    #>@foreach(var item in Model.<#=section.Name #>.<#=property.Name #>)
+                                {
+                                    <li class="list-group-item">
+                                        <div class="input-group">
+<#
+                                if (elementType == typeof(bool))
+                                {//bool数组
+                                    #> @Html.CheckBox("<#=section.Name #>.<#=property.Name #>",item)<#
+                                }
+                                else if (elementType == typeof(string))
+                                {//字符 单行，多行，编辑器,密码
+                                    var dataType = property.GetDataType();
+                                    if (dataType == DataType.Text)
+                                    {
+                                #>@Html.TextBox("<#=section.Name #>.<#=property.Name #>",item,new{@class="form-control"})<#
+                                    }
+                                    else if (dataType == DataType.MultilineText)
+                                    {
+                                #>@Html.TextArea("<#=section.Name #>.<#=property.Name #>",item,dic<#=section.Name #>_<#=property.Name #>)<#
+                                    }
+                                    else if (dataType == DataType.Password)
+                                    {
+                                #>@Html.Password("<#=section.Name #>.<#=property.Name #>",item,dic<#=section.Name #>_<#=property.Name #>)<#
+                                    }
+                                    else if (dataType == DataType.Custom)
+                                    {
+                                #>@Html.EditorFor(x=>x.<#=section.Name #>.<#=property.Name #>)<#
+                                    }
+                                }
+                                else
+                                {
+                                    #>@Html.TextBox("<#=section.Name #>.<#=property.Name #>",item,dic<#=section.Name #>_<#=property.Name #>)<#
+                                }
+                    #>
+
+                                            @Html.ValidationMessage("<#=section.Name #>.<#=property.Name #>")   
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-warning" onclick="javascript:if($(this).parents('ul').find('li').length<=2){alert('至少1个');return false;}if(confirm('确定删除？')) $(this).parents('li').remove()">删除</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                    <button type="button" class="btn btn-primary" onclick="javascript:$(this).parent().before($(this).parent().prev().clone(true));$(this).parent().prev().find('input').val('')">添加</button>
+                                </li>
+                                }
+<#
+                            }
+                            else
+                            {//复杂数组
+                                #>@Html.EditorFor(x=>x.<#=section.Name #>.<#=property.Name #>)<#
+                            }
+#>
+                                
+                            </ul>
+<#
+                    }
+                    else
+                    {//复杂类型
+                #>@Html.EditorFor(x=>x.<#=section.Name #>.<#=property.Name #>)<#
+                    }
+#>                                           
+                    </div>
+                </div>
+<#
+                
+            }
+#>  
+            <div class="form-actions" style="margin-bottom:0; height:70px;"><div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>确定</button></div>
+            </div>
+        </form>
+</div>
+<#
+        i++;
+    } 
+#>
+</div>
+</div>
+</div>
+</section>

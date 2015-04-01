@@ -1,0 +1,10 @@
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\Uninf.Images.dll.config
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\Uninf.Images.dll
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\Uninf.Images.pdb
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\CodeCarvings.Piczard.dll
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\CodeCarvings.Piczard.xml
+E:\project2015\thzsplit\libs\Uninf.Image\obj\Debug\Uninf.Images.dll
+E:\project2015\thzsplit\libs\Uninf.Image\obj\Debug\Uninf.Images.pdb
+E:\project2015\thzsplit\libs\Uninf.Image\obj\Debug\Uninf.Images.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\Uninf.Upload.dll
+E:\project2015\thzsplit\libs\Uninf.Image\bin\Debug\Uninf.Upload.pdb

@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.CacheData</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.CacheData.CountBase`3">
+            <summary>
+            数量缓存基类
+            在一对多关系中，通过主表主键，获取从表相关的数量
+            </summary>
+            <typeparam name="TMain">关系中的主表</typeparam>
+            <typeparam name="TChild">关系中的从表</typeparam>
+            <typeparam name="TMainKey">主表主键类型</typeparam>
+        </member>
+        <member name="T:Uninf.CacheData.ICountGetter`3">
+            <summary>
+            数量读取接口
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+        </member>
+        <member name="T:Uninf.CacheData.IGetter">
+            <summary>
+            读缓存接口
+            用于批量注入
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.ICountGetter`3.GetCount(`2)">
+            <summary>
+            读取数量
+            </summary>
+            <param name="key">The key.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="T:Uninf.CacheData.ICountSetter`3">
+            <summary>
+            数量写入接口
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+        </member>
+        <member name="T:Uninf.CacheData.ISetter">
+            <summary>
+            缓存写入接口
+            用于批量依赖注入
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.ICountSetter`3.Increament(`2,System.Int32)">
+            <summary>
+            增加
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ICountSetter`3.Decreament(`2,System.Int32)">
+            <summary>
+            减少
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:Uninf.CacheData.CountBase`3.cache">
+            <summary>
+            缓存操作
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.#ctor(Uninf.Cache.ICache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.CacheData.CountBase`3"/> class.
+            </summary>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.GetCount(`2)">
+            <summary>
+            获取数量
+            </summary>
+            <param name="key">主表主键</param>
+            <returns>数量</returns>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.GetCounts(`2[])">
+            <summary>
+            批量获取数量
+            </summary>
+            <param name="keys">主表主键集合</param>
+            <returns>已字典形式返回数量，字典的key是主表主键，value是数量</returns>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.RebuildCounts(`2[])">
+            <summary>
+            批量重建数量
+            </summary>
+            <param name="keys">主表主键</param>
+            <returns>IDictionary&lt;TMainKey, System.Int32&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.RebuildCount(`2)">
+            <summary>
+            重建数量
+            </summary>
+            <param name="key">主表主键</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.Increament(`2,System.Int32)">
+            <summary>
+            增加
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.Decreament(`2,System.Int32)">
+            <summary>
+            减少
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.CountCacheKey(`2)">
+            <summary>
+            缓存对应的key默认使用cnt:TMain/TChild/Name:key
+            </summary>
+            <param name="key">The key.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.GetKeyFromCacheKey(System.String)">
+            <summary>
+            通过缓存key，解析主表主键，如主表主键无法从string转换，请在子类重写此方法
+            </summary>
+            <param name="key">The key.</param>
+            <returns>TMainKey.</returns>
+            <exception cref="T:System.Exception">不支持string到 + typeof(TMainKey).Name + 的类型转换，请在+this.GetType().Name+中override GetKeyFromCacheKey方法</exception>
+        </member>
+        <member name="M:Uninf.CacheData.CountBase`3.CountName">
+            <summary>
+            数量名称
+            同样的主从实体间可能有多种关系，如好友，关注都是人与人的关系，要为每种起不同的名字
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.CacheData.IObjGetter`2">
+            <summary>
+            实体类型读取接口
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+        </member>
+        <member name="M:Uninf.CacheData.IObjGetter`2.Get(`1)">
+            <summary>
+            读取实体
+            </summary>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.IObjGetter`2.Gets(`1[])">
+            <summary>
+            批量读取实体
+            </summary>
+            <param name="keys">The keys.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="T:Uninf.CacheData.IListGetter`1">
+            <summary>
+            类表类型接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.CacheData.IListGetter`1.GetList">
+            <summary>
+            读取列表
+            </summary>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.IListGetter`1.Page(System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            翻页读取列表
+            </summary>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="all">All.</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="T:Uninf.CacheData.IRelatedGetter`2">
+            <summary>
+            一对多关系列表读取接口
+            </summary>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+        </member>
+        <member name="M:Uninf.CacheData.IRelatedGetter`2.GetRelated(`1)">
+            <summary>
+            读取列表
+            </summary>
+            <param name="key">The key.</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.IRelatedGetter`2.GetRelatedPage(`1,System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            翻页读取列表
+            </summary>
+            <param name="key">The key.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="all">All.</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="T:Uninf.CacheData.IObjSetter`1">
+            <summary>
+            实体写入接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.CacheData.IObjSetter`1.Set(`0)">
+            <summary>
+            写入实体
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.IObjSetter`1.Delete(`0)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="T:Uninf.CacheData.IListSetter`1">
+            <summary>
+            列表写入接口
+            全部列表和分页列表为不同的实现，向一个中添加不会出现在另一个中
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.CacheData.IListSetter`1.AddToList(`0)">
+            <summary>
+            增加
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.IListSetter`1.RemoveFromList(`0)">
+            <summary>
+            删除
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.IListSetter`1.AddToPage(`0,System.Boolean)">
+            <summary>
+            增加到分页
+            </summary>
+            <param name="item">The item.</param>
+            <param name="always">if set to <c>true</c> [always].</param>
+        </member>
+        <member name="M:Uninf.CacheData.IListSetter`1.RemoveFromPage(`0)">
+            <summary>
+            从分页中删除
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="T:Uninf.CacheData.IRelatedSetter`2">
+            <summary>
+            关系写入接口
+            全部列表和分页列表为不同的实现，向一个中添加不会出现在另一个中
+            </summary>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+        </member>
+        <member name="M:Uninf.CacheData.IRelatedSetter`2.AddToRelated(`1,`0,System.Boolean)">
+            <summary>
+            增加
+            </summary>
+            <param name="pid">The pid.</param>
+            <param name="item">The item.</param>
+            <param name="always">if set to <c>true</c> [always].</param>
+        </member>
+        <member name="M:Uninf.CacheData.IRelatedSetter`2.RemoveFromRelated(`1,`0)">
+            <summary>
+            删除
+            </summary>
+            <param name="pid">The pid.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.IRelatedSetter`2.AddToRelatedPage(`1,`0,System.Boolean)">
+            <summary>
+            增加到分页
+            </summary>
+            <param name="pid">The pid.</param>
+            <param name="item">The item.</param>
+            <param name="always">if set to <c>true</c> [always].</param>
+        </member>
+        <member name="M:Uninf.CacheData.IRelatedSetter`2.RemoveFromRelatedPage(`1,`0)">
+            <summary>
+            从分页删除
+            </summary>
+            <param name="pid">The pid.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="T:Uninf.CacheData.ListBase`1">
+            <summary>
+            ListBase. 类
+            </summary>
+            <typeparam name="T">实体类型，实体必须有名称为id的属性作为主键标识</typeparam>
+        </member>
+        <member name="F:Uninf.CacheData.ListBase`1.cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.#ctor(Uninf.Cache.ICache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.CacheData.ListBase`1"/> class.
+            </summary>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.GetList">
+            <summary>
+            获取全部列表
+            </summary>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.RebuildList">
+            <summary>
+            重建全部列表
+            </summary>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.Page(System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            获取分页列表
+            </summary>
+            <param name="skip">跳过</param>
+            <param name="take">获取条数</param>
+            <param name="all">全部数量</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.GetAllCount">
+            <summary>
+            获取全部数量
+            </summary>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.Score">
+            <summary>
+            计算排序值
+            </summary>
+            <returns>Func&lt;T, System.Int64&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.RebuildPage(System.Int32,System.Int32,System.Boolean,System.Int64@)">
+            <summary>
+            重建分页
+            </summary>
+            <param name="skip">跳过</param>
+            <param name="take">获取条数</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <param name="all">全部数量</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.AddToList(`0)">
+            <summary>
+            向全部列表中添加
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.RemoveFromList(`0)">
+            <summary>
+            从全部列表中删除
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.AddToPage(`0,System.Boolean)">
+            <summary>
+            向分页中添加
+            </summary>
+            <param name="item">The item.</param>
+            <param name="always">if set to <c>true</c> [always].</param>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.AfterAddToPage(System.Boolean,System.Boolean)">
+            <summary>
+            添加到分页后
+            </summary>
+            <param name="always">if set to <c>true</c> [always].</param>
+            <param name="hasDo">if set to <c>true</c> [has do].</param>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.RemoveFromPage(`0)">
+            <summary>
+            从分页中删除
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ListBase`1.AfterDeleteFromPage(System.Int32)">
+            <summary>
+            从分页删除后
+            </summary>
+            <param name="DeleteCnt">The delete count.</param>
+        </member>
+        <member name="T:Uninf.CacheData.ManyRelatedBase`4">
+            <summary>
+            ManyRelatedBase. 类
+            父子孙3层关系
+            </summary>
+            <typeparam name="TChild">子类型</typeparam>
+            <typeparam name="TMainKey">父主键类型</typeparam>
+            <typeparam name="TManyKey">子主键类型</typeparam>
+            <typeparam name="TOneGetter">子孙1对多关系缓存实现类，比如继承自IRelatedGetter&lt;TChild,TManyKey&gt;</typeparam>
+        </member>
+        <member name="F:Uninf.CacheData.ManyRelatedBase`4.cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="F:Uninf.CacheData.ManyRelatedBase`4.oneGetter">
+            <summary>
+            The one getter
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.#ctor(Uninf.Cache.ICache,`3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.CacheData.ManyRelatedBase`4"/> class.
+            </summary>
+            <param name="cache">The cache.</param>
+            <param name="oneGetter">The one getter.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.GetRelated(`1)">
+            <summary>
+            通过父id获取孙列表
+            </summary>
+            <param name="key">父id</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.GetRelatedPage(`1,System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            翻页获取
+            </summary>
+            <param name="key">父id</param>
+            <param name="skip">跳过条数</param>
+            <param name="take">获取条数</param>
+            <param name="all">全部数量</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.GetChildren(System.Collections.Generic.IEnumerable{`2},System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            通过子id集合获取孙列表
+            </summary>
+            <param name="keys">子id集合</param>
+            <param name="skip">跳过条数</param>
+            <param name="take">获取条数</param>
+            <param name="all">全部数量</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.GetAllCount(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            全部数量
+            </summary>
+            <param name="keys">The keys.</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.OrderBy(System.Collections.Generic.IEnumerable{`0})">
+             <summary>
+            排序
+             </summary>
+             <param name="src">The source.</param>
+             <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ManyRelatedBase`4.GetManyKeys(`1)">
+            <summary>
+            通过父id获取子id集合
+            </summary>
+            <param name="mainKey">The main key.</param>
+            <returns>IEnumerable&lt;TManyKey&gt;.</returns>
+        </member>
+        <member name="T:Uninf.CacheData.ObjBase`2">
+            <summary>
+            ObjBase. 类
+            </summary>
+            <typeparam name="T">实体类型，实体必须有名称为id的属性作为主键标识</typeparam>
+            <typeparam name="TKey">主键类型</typeparam>
+        </member>
+        <member name="F:Uninf.CacheData.ObjBase`2.cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.#ctor(Uninf.Cache.ICache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.CacheData.ObjBase`2"/> class.
+            </summary>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.Get(`1)">
+            <summary>
+            通过主键获取实体
+            </summary>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.Rebuild(`1)">
+            <summary>
+            重建实体
+            </summary>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.Gets(`1[])">
+            <summary>
+            批量获取实体
+            </summary>
+            <param name="keys">The keys.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.Rebuild(`1[])">
+            <summary>
+            批量重建实体
+            </summary>
+            <param name="keys">The keys.</param>
+            <returns>Dictionary&lt;TKey, T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.Set(`0)">
+            <summary>
+            设置或更新
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.CacheData.ObjBase`2.Delete(`0)">
+            <summary>
+            删除
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="T:Uninf.CacheData.RelatedBase`3">
+            <summary>
+            RelatedBase. 类
+            主从关系
+            </summary>
+            <typeparam name="TMain">主实体</typeparam>
+            <typeparam name="TChild">自实体类型，实体必须有名称为id的属性作为主键标识</typeparam>
+            <typeparam name="TMainKey">主实体主键类型</typeparam>
+        </member>
+        <member name="F:Uninf.CacheData.RelatedBase`3.cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.#ctor(Uninf.Cache.ICache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.CacheData.RelatedBase`3"/> class.
+            </summary>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.GetRelated(`2)">
+            <summary>
+            获取全部列表
+            </summary>
+            <param name="key">主实体主键</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.Rebuild(`2)">
+            <summary>
+            重建全部列表
+            </summary>
+            <param name="key">主实体主键</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.GetRelatedPage(`2,System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            分页获取列表
+            </summary>
+            <param name="key">主实体主键</param>
+            <param name="skip">跳过数量</param>
+            <param name="take">获取数量</param>
+            <param name="all">全部数量</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.RebuildPage(`2,System.Int32,System.Int32,System.Boolean,System.Int64@)">
+            <summary>
+            重建分页
+            </summary>
+            <param name="key">主实体主键</param>
+            <param name="skip">跳过数量</param>
+            <param name="take">获取数量</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <param name="all">全部数量</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.AddToRelated(`2,`1,System.Boolean)">
+            <summary>
+            全部中添加
+            </summary>
+            <param name="pid">主实体主键</param>
+            <param name="item">子实体</param>
+            <param name="always">if set to <c>true</c> [always].</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.RemoveFromRelated(`2,`1)">
+            <summary>
+            从全部中删除
+            </summary>
+            <param name="pid">主实体主键</param>
+            <param name="item">子实体</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.AddToRelatedPage(`2,`1,System.Boolean)">
+            <summary>
+            分页中添加
+            </summary>
+            <param name="pid">主实体主键</param>
+            <param name="item">子实体</param>
+            <param name="always">当缓存不存在时，是否建立缓存，默认为否</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.AfterAddToPage(`2,System.Boolean,System.Boolean)">
+            <summary>
+            添加到分页后
+            </summary>
+            <param name="pid">主实体主键</param>
+            <param name="always">当缓存不存在时，是否建立缓存，默认为否</param>
+            <param name="hasDo">是否真的添加到缓存了，如果always为true，则此参数一定为true</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.RemoveFromRelatedPage(`2,`1)">
+            <summary>
+            从翻页删除
+            </summary>
+            <param name="pid">主实体主键</param>
+            <param name="item">子实体</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.AfterDeleteFromPage(`2,System.Int32)">
+            <summary>
+            从翻页删除后
+            </summary>
+            <param name="pid">主实体主键</param>
+            <param name="DeleteCnt">删除的个数</param>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.GetAllCount(`2)">
+            <summary>
+            获取全部数量
+            </summary>
+            <param name="pid">主实体主键</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.RelatedName">
+            <summary>
+            关系名称
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.CacheData.RelatedBase`3.Score">
+            <summary>
+            分页排序分数
+            </summary>
+            <returns>Func&lt;TChild, System.Int64&gt;.</returns>
+        </member>
+    </members>
+</doc>

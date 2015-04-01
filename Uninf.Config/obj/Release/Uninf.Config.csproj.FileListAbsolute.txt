@@ -1,0 +1,6 @@
+E:\project2015\thzsplit\libs\Uninf.Config\bin\Release\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config\bin\Release\Uninf.Config.pdb
+E:\project2015\thzsplit\libs\Uninf.Config\obj\Release\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config\obj\Release\Uninf.Config.pdb
+E:\project2015\thzsplit\libs\Uninf.Config\obj\Release\Uninf.Config.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Config\bin\Release\Uninf.Config.XML

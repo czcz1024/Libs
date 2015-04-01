@@ -1,0 +1,11 @@
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Uninf.Config.PageTemplate.dll
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Uninf.Config.PageTemplate.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Uninf.Config.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\obj\Debug\Uninf.Config.PageTemplate.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\obj\Debug\Uninf.Config.PageTemplate.dll
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\obj\Debug\Uninf.Config.PageTemplate.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Microsoft.VisualStudio.TextTemplating.10.0.dll
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Microsoft.VisualStudio.TextTemplating.10.0.xml
+E:\project2015\thzsplit\libs\Uninf.Config.PageTemplate\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.xml

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Log</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Log.ILogger">
+            <summary>
+            日志接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Log.ILogger.Error(System.String)">
+            <summary>
+            错误
+            </summary>
+            <param name="msg">信息</param>
+        </member>
+        <member name="M:Uninf.Log.ILogger.Debug(System.String)">
+            <summary>
+            调试
+            </summary>
+            <param name="msg">信息</param>
+        </member>
+        <member name="M:Uninf.Log.ILogger.Info(System.String)">
+            <summary>
+            记录
+            </summary>
+            <param name="msg">信息</param>
+        </member>
+    </members>
+</doc>

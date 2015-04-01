@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Config.Mvc5</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Config.Mvc5.ConfigControllerBase`1">
+            <summary>
+            ConfigControllerBase. 类
+            mvc修改配置界面controller基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.Index(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            显示表单action
+            </summary>
+            <param name="section">The section.</param>
+            <param name="result">if set to <c>true</c> [result].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.Index(System.Web.Mvc.FormCollection,System.String)">
+            <summary>
+            提交表单action
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.UpdateSuccess(System.Web.Mvc.FormCollection,System.String,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            更新section节成功后执行，可override
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+            <param name="sectionProperty">The section property.</param>
+            <param name="sectionObj">The section object.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.UpdateSection(System.Web.Mvc.FormCollection,System.String,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            更新section节，默认使用反射机制，如有特别需要可override
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+            <param name="sectionProperty">The section property.</param>
+            <param name="sectionObj">The section object.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.UpdateArrays(System.Web.Mvc.FormCollection,System.String,System.Object)">
+            <summary>
+            更新配置中的数组
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+            <param name="sectionObj">The section object.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.UpdateArray(System.Web.Mvc.FormCollection,System.String,System.Reflection.PropertyInfo,System.Array)">
+            <summary>
+            更新配置中的数组
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+            <param name="arrayProperty">The array property.</param>
+            <param name="array">The array.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.UpdateArrayProperty(System.Web.Mvc.FormCollection,System.String,System.Reflection.PropertyInfo,System.Reflection.PropertyInfo,System.Int32,System.Object)">
+            <summary>
+            更新配置中的数组的属性，当数组的元素是复杂类型时
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+            <param name="arrayProperty">The array property.</param>
+            <param name="FieldProperty">The field property.</param>
+            <param name="arrayIndex">Index of the array.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.TellOtherServerReloadConfig">
+            <summary>
+            保存成功后，通知其他服务器重新载入配置
+            当多网站负载时需要实现此方法
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.SaveSuccess(System.Web.Mvc.FormCollection,System.String)">
+            <summary>
+            保存成功后执行，可override
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.BeforChange(System.Web.Mvc.FormCollection,System.String)">
+            <summary>
+            在开始更新前执行，可override
+            </summary>
+            <param name="form">The form.</param>
+            <param name="section">The section.</param>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.GetIns">
+            <summary>
+            获取实例
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.Mvc5.ConfigControllerBase`1.GetView">
+            <summary>
+            获取view名称
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+    </members>
+</doc>

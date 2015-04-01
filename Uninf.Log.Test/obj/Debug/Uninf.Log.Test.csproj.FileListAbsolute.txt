@@ -1,0 +1,15 @@
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\log4net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\log4net.xml
+E:\project2015\thzsplit\libs\Uninf.Log.Test\obj\Debug\Uninf.Log.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\obj\Debug\Uninf.Log.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\obj\Debug\Uninf.Log.Test.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.Log4Net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.Log4Net.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\Uninf.Log.NLog.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Debug\NLog.xml

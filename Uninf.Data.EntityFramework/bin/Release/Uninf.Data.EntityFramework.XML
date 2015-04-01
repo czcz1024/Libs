@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Data.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Data.EntityFramework.DbContextBase">
+            <summary>
+            DbContextBase. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor(System.String)">
+            <summary>
+            Constructs a new context instance using the given string as the name or connection string for the
+            database to which a connection will be made.
+            See the class remarks for how this is used to create a connection.
+            </summary>
+            <param name="nameOrConnectionString">Either the database name or a connection string.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor(System.String,System.Data.Entity.Infrastructure.DbCompiledModel)">
+            <summary>
+            Constructs a new context instance using the given string as the name or connection string for the
+            database to which a connection will be made, and initializes it from the given model.
+            See the class remarks for how this is used to create a connection.
+            </summary>
+            <param name="nameOrConnectionString">Either the database name or a connection string.</param>
+            <param name="model">The model that will back this context.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor(System.Data.Common.DbConnection,System.Boolean)">
+            <summary>
+            Constructs a new context instance using the existing connection to connect to a database.
+            The connection will not be disposed when the context is disposed if <paramref name="contextOwnsConnection" />
+            is <c>false</c>.
+            </summary>
+            <param name="existingConnection">An existing connection to use for the new context.</param>
+            <param name="contextOwnsConnection">If set to <c>true</c> the connection is disposed when the context is disposed, otherwise the caller must dispose the connection.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor(System.Data.Common.DbConnection,System.Data.Entity.Infrastructure.DbCompiledModel,System.Boolean)">
+            <summary>
+            Constructs a new context instance using the existing connection to connect to a database,
+            and initializes it from the given model.
+            The connection will not be disposed when the context is disposed if <paramref name="contextOwnsConnection" />
+            is <c>false</c>.
+            </summary>
+            <param name="existingConnection">An existing connection to use for the new context.</param>
+            <param name="model">The model that will back this context.</param>
+            <param name="contextOwnsConnection">If set to <c>true</c> the connection is disposed when the context is disposed, otherwise the caller must dispose the connection.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor(System.Data.Entity.Core.Objects.ObjectContext,System.Boolean)">
+            <summary>
+            Constructs a new context instance around an existing ObjectContext.
+            </summary>
+            <param name="objectContext">An existing ObjectContext to wrap with the new context.</param>
+            <param name="dbContextOwnsObjectContext">If set to <c>true</c> the ObjectContext is disposed when the DbContext is disposed, otherwise the caller must dispose the connection.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor(System.Data.Entity.Infrastructure.DbCompiledModel)">
+            <summary>
+            Constructs a new context instance using conventions to create the name of the database to
+            which a connection will be made, and initializes it from the given model.
+            The by-convention name is the full name (namespace + class name) of the derived context class.
+            See the class remarks for how this is used to create a connection.
+            </summary>
+            <param name="model">The model that will back this context.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Data.EntityFramework.DbContextBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.DbContextBase.GetRepository``1">
+            <summary>
+            获取仓储
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns>IRepository&lt;T&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Data.EntityFramework.RepositoryEfAdapter`1">
+            <summary>
+            仓储与EF适配类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.set">
+            <summary>
+            The DbSet
+            </summary>
+        </member>
+        <member name="F:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.context">
+            <summary>
+            The DbContext
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.#ctor(System.Data.Entity.DbSet{`0},System.Data.Entity.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Data.EntityFramework.RepositoryEfAdapter`1"/> class.
+            </summary>
+            <param name="set">The set.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.Add(`0)">
+            <summary>
+            Adds the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.Delete(`0)">
+            <summary>
+            Deletes the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.Find(System.Object[])">
+            <summary>
+            Finds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.AsQueryable">
+            <summary>
+            Ases the queryable.
+            </summary>
+            <returns>IQueryable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.Update(`0)">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.EntityFramework.RepositoryEfAdapter`1.Update(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="updateProperties">The update properties.</param>
+            <returns>T.</returns>
+        </member>
+    </members>
+</doc>

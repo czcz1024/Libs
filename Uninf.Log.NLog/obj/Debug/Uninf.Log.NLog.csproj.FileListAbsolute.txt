@@ -1,0 +1,9 @@
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Debug\Uninf.Log.NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Debug\Uninf.Log.NLog.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Debug\NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Debug\Uninf.Log.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Debug\Uninf.Log.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\bin\Debug\NLog.xml
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\obj\Debug\Uninf.Log.NLog.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\obj\Debug\Uninf.Log.NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.NLog\obj\Debug\Uninf.Log.NLog.pdb

@@ -1,0 +1,12 @@
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\Uninf.Data.Mongo.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\Uninf.Data.Mongo.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\Uninf.Data.Mongo.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\MongoDB.Driver.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\MongoDB.Bson.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\Uninf.Data.Mongo.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\MongoDB.Driver.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\MongoDB.Bson.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\obj\Release\Uninf.Data.Mongo.Test.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\obj\Release\Uninf.Data.Mongo.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\obj\Release\Uninf.Data.Mongo.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo.Test\bin\Release\Uninf.Data.Mongo.xml

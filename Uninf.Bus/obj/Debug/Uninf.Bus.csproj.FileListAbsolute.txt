@@ -1,0 +1,6 @@
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Debug\Uninf.Bus.dll
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Debug\Uninf.Bus.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus\obj\Debug\Uninf.Bus.dll
+E:\project2015\thzsplit\libs\Uninf.Bus\obj\Debug\Uninf.Bus.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Debug\Newtonsoft.Json.dll
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Debug\Newtonsoft.Json.xml

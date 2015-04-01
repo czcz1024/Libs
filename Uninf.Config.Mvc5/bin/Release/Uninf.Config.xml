@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Config</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Config.FileTHZConfigBase`1">
+            <summary>
+            基于文件的自定义配置基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Uninf.Config.THZConfigBase`1">
+            <summary>
+            自定义配置基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Uninf.Config.Singleton`1">
+            <summary>
+            单例模式
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Uninf.Config.Singleton`1.instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.Singleton`1.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="M:Uninf.Config.THZConfigBase`1.HasConfig">
+            <summary>
+            检测是否已经创建配置
+            </summary>
+            <returns><c>true</c> if this instance has config; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Config.THZConfigBase`1.Load">
+            <summary>
+            从已经创建的配置中读取成配置对象
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.THZConfigBase`1.Create">
+            <summary>
+            新建一个配置对象
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.THZConfigBase`1.Save(`0)">
+            <summary>
+            保存配置对象
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:Uninf.Config.THZConfigBase`1.SaveDefault(`0)">
+            <summary>
+            保存默认值
+            </summary>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="M:Uninf.Config.THZConfigBase`1.ResetToDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            重置为默认
+            </summary>
+            <param name="field">The field.</param>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.FilePath">
+            <summary>
+            保存路径
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.DefaultFilePath">
+            <summary>
+            默认值保存路径
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.Serialize(`0)">
+            <summary>
+            序列化方式
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.Deserialize(System.String)">
+            <summary>
+            反序列化方式
+            </summary>
+            <param name="str">The STR.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.HasConfig">
+            <summary>
+            存在配置文件
+            </summary>
+            <returns><c>true</c> if this instance has configuration; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.Load">
+            <summary>
+            从文件加载
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.Save(`0)">
+            <summary>
+            保存到文件
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:Uninf.Config.FileTHZConfigBase`1.SaveDefault(`0)">
+            <summary>
+            保存默认
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="T:Uninf.Config.ITHZConfig">
+            <summary>
+            create by cz
+            2013/9/23 星期一 10:18
+            用于标记为配置
+            </summary>
+        </member>
+        <member name="T:Uninf.Config.THZConfigHelper`1">
+            <summary>
+            THZConfigHelper. 类
+            读取配置请用此类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Uninf.Config.THZConfigHelper`1._instance">
+            <summary>
+            The _instance
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.THZConfigHelper`1.Get">
+            <summary>
+            Gets this instance.
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.THZConfigHelper`1.Reload">
+            <summary>
+            Reloads this instance.
+            </summary>
+            <exception cref="T:System.Exception">未找到配置文件</exception>
+        </member>
+        <member name="P:Uninf.Config.THZConfigHelper`1.Instance">
+            <summary>
+            访问实例
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:Uninf.Config.XmlConfigExtension">
+            <summary>
+            XmlConfigExtension. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.XmlConfigExtension.GetExpression``1(System.String)">
+            <summary>
+            Gets the expression.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="src">The source.</param>
+            <returns>Expression&lt;Func&lt;T, System.Object&gt;&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Config.XmlFileConfigBase`1">
+            <summary>
+            继续xml文件的自定义配置基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Config.XmlFileConfigBase`1.Serialize(`0)">
+            <summary>
+            序列化
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Config.XmlFileConfigBase`1.Deserialize(System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="str">The string.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Config.XmlFileConfigBase`1.ResetToDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            重置为默认值
+            </summary>
+            <param name="field">The field.</param>
+            <exception cref="T:System.Exception">默认配置与现有配置结构不一致</exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,53 @@
+<GhostDoc>
+<IgnoreFilePatterns>
+  <IgnoreFilePattern>*.min.js</IgnoreFilePattern>
+  <IgnoreFilePattern>jquery*.js</IgnoreFilePattern>
+</IgnoreFilePatterns>
+  <SpellChecker>
+    <IncludeExtensions>
+    </IncludeExtensions>
+    <IgnoreExtensions>
+    </IgnoreExtensions>
+    <IgnoreFiles>
+    </IgnoreFiles>
+  </SpellChecker>
+<HelpConfigurations selected="HelpFile">
+  <HelpConfiguration name="HelpFile">
+    <OutputPath>.\Helps</OutputPath>
+    <HelpFileName>Uninf.Lib</HelpFileName>
+    <ImageFolderPath />
+    <HtmlFormats>
+      <HtmlHelp>true</HtmlHelp>
+      <MSHelpViewer>false</MSHelpViewer>
+      <MSHelp2>false</MSHelp2>
+      <Website>true</Website>
+    </HtmlFormats>
+    <IncludeScopes>
+      <Public>true</Public>
+      <Internal>true</Internal>
+      <Protected>true</Protected>
+      <Private>true</Private>
+      <Inherited>true</Inherited>
+      <InheritedFromReferences>false</InheritedFromReferences>
+      <EnableTags>false</EnableTags>
+      <TagList />
+    </IncludeScopes>
+    <ResolveCrefLinks>true</ResolveCrefLinks>
+    <HeaderText />
+    <FooterText />
+    <SelectedProjects>
+      <SelectedProject>Uninf.TimeTask</SelectedProject>
+      <SelectedProject>Uninf.Model</SelectedProject>
+      <SelectedProject>Uninf.Data</SelectedProject>
+      <SelectedProject>Uninf.Data.EntityFramework</SelectedProject>
+      <SelectedProject>Uninf.Cache</SelectedProject>
+      <SelectedProject>Uninf.Cache.Redis</SelectedProject>
+      <SelectedProject>Uninf.CacheData</SelectedProject>
+      <SelectedProject>Uninf.Model.Automapper</SelectedProject>
+      <SelectedProject>Uninf.Log</SelectedProject>
+      <SelectedProject>Uninf.Log.NLog</SelectedProject>
+      <SelectedProject>Uninf.TimeTask.QuartZ</SelectedProject>
+    </SelectedProjects>
+  </HelpConfiguration>
+</HelpConfigurations>
+</GhostDoc>

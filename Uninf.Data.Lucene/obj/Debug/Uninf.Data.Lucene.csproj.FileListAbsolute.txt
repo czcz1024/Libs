@@ -1,0 +1,11 @@
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\Uninf.Data.Lucene.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\Uninf.Data.Lucene.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\Lucene.Net.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\PanGu.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\PanGu.HighLight.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\PanGu.Lucene.Analyzer.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\Lucene.Net.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\bin\Debug\Lucene.Net.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\obj\Debug\Uninf.Data.Lucene.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene\obj\Debug\Uninf.Data.Lucene.pdb

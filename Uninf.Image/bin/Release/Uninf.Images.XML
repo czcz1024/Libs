@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Images</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Images.ImageResize">
+            <summary>
+            ImageResize. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.Resize(System.String,System.String,System.String,Uninf.Upload.IUpload,Uninf.Images.ResizeConfig[])">
+            <summary>
+            缩放图片
+            </summary>
+            <param name="oldImgPath">源文件路径</param>
+            <param name="saveRootDir">保存到的文件夹</param>
+            <param name="saveFileName">保存的文件名</param>
+            <param name="uploader">保存图片用的uploader</param>
+            <param name="configs">缩放设置</param>
+            <returns>文件存放地址</returns>
+            <exception cref="T:System.Exception">原图不正确</exception>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.Resize(System.Drawing.Image,System.String,System.String,Uninf.Upload.IUpload,Uninf.Images.ResizeConfig[])">
+            <summary>
+            缩放图片
+            </summary>
+            <param name="oldImg">原图</param>
+            <param name="saveRootDir">保存到的文件夹</param>
+            <param name="saveFileName">保存的文件名</param>
+            <param name="uploader">保存图片用的uploader</param>
+            <param name="configs">缩放设置</param>
+            <returns>文件存放地址</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.ResizeProcess(System.Drawing.Image,Uninf.Images.ResizeConfig)">
+            <summary>
+            Resizes the process.
+            </summary>
+            <param name="old">原图</param>
+            <param name="config">缩放设置</param>
+            <returns>缩略图</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.Rotate(System.Drawing.Image,System.Int32)">
+            <summary>
+            旋转
+            </summary>
+            <param name="old">原图</param>
+            <param name="degree">角度</param>
+            <returns>Image.</returns>
+            <exception cref="T:System.Exception">角度只支持0,90,180,270</exception>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.ByMin(System.Drawing.Image,Uninf.Images.ResizeConfig)">
+            <summary>
+            Bies the minimum.
+            </summary>
+            <param name="old">The old.</param>
+            <param name="config">The configuration.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.ByMax(System.Drawing.Image,Uninf.Images.ResizeConfig)">
+            <summary>
+            Bies the maximum.
+            </summary>
+            <param name="old">The old.</param>
+            <param name="config">The configuration.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.FixHeightAutoWidth(System.Drawing.Image,Uninf.Images.ResizeConfig)">
+            <summary>
+            Fixes the width of the height automatic.
+            </summary>
+            <param name="old">The old.</param>
+            <param name="config">The configuration.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.FixWidthAutoHeight(System.Drawing.Image,Uninf.Images.ResizeConfig)">
+            <summary>
+            Fixes the height of the width automatic.
+            </summary>
+            <param name="old">The old.</param>
+            <param name="config">The configuration.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.FixWidthAndHeight(System.Drawing.Image,Uninf.Images.ResizeConfig)">
+            <summary>
+            Fixes the height of the width and.
+            </summary>
+            <param name="old">The old.</param>
+            <param name="config">The configuration.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.ResizeGif(System.Drawing.Image,System.Double)">
+            <summary>
+            Resizes the GIF.
+            </summary>
+            <param name="old">The old.</param>
+            <param name="rate">The rate.</param>
+            <returns>Image.</returns>
+        </member>
+        <member name="M:Uninf.Images.ImageResize.GetImageFormat(System.Drawing.Image)">
+            <summary>
+            Gets the image format.
+            </summary>
+            <param name="img">The img.</param>
+            <returns>System.Drawing.Imaging.ImageFormat.</returns>
+        </member>
+        <member name="T:Uninf.Images.ResizeConfig">
+            <summary>
+            ResizeConfig. 类
+            </summary>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.ResizeToBigger">
+            <summary>
+            允许小图放大
+            </summary>
+            <value><c>true</c> if [resize to bigger]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.ResizeToBiggerColor">
+            <summary>
+            Gets or sets the color of the resize to bigger.
+            </summary>
+            <value>The color of the resize to bigger.</value>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.ResizeToWidth">
+            <summary>
+            要缩放到的宽
+            </summary>
+            <value>The width of the resize to.</value>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.ResizeToHeight">
+            <summary>
+            要缩放到的高
+            </summary>
+            <value>The height of the resize to.</value>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.AllowLose">
+            <summary>
+            允许丢失图片的部分
+            </summary>
+            <value><c>true</c> if [allow lose]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.AllowGif">
+            <summary>
+            允许GIF缩放带动画
+            </summary>
+            <value><c>true</c> if [allow GIF]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Uninf.Images.ResizeConfig.ResizeType">
+            <summary>
+            缩放方式
+            </summary>
+            <value>The type of the resize.</value>
+        </member>
+        <member name="T:Uninf.Images.ResizeType">
+            <summary>
+            Enum ResizeType
+            </summary>
+        </member>
+        <member name="F:Uninf.Images.ResizeType.FixWidthAndHeight">
+            <summary>
+            固定宽高
+            </summary>
+        </member>
+        <member name="F:Uninf.Images.ResizeType.FixWidthAutoHeight">
+            <summary>
+            固定宽，自动计算高
+            </summary>
+        </member>
+        <member name="F:Uninf.Images.ResizeType.FixHeightAutoWidth">
+            <summary>
+            固定高，自动计算宽
+            </summary>
+        </member>
+        <member name="F:Uninf.Images.ResizeType.ByMax">
+            <summary>
+            按大值计算
+            </summary>
+        </member>
+        <member name="F:Uninf.Images.ResizeType.ByMin">
+            <summary>
+            按小值计算
+            </summary>
+        </member>
+    </members>
+</doc>

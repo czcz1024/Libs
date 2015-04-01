@@ -1,0 +1,13 @@
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Uninf.Bus.RabbitMq.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Uninf.Bus.RabbitMq.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Newtonsoft.Json.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\RabbitMQ.Client.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Uninf.Bus.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Uninf.Bus.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Newtonsoft.Json.xml
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\RabbitMQ.Client.xml
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\obj\Release\Uninf.Bus.RabbitMq.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\obj\Release\Uninf.Bus.RabbitMq.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\obj\Release\Uninf.Bus.RabbitMq.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Uninf.Bus.xml
+E:\project2015\thzsplit\libs\Uninf.Bus.RabbitMq\bin\Release\Uninf.Bus.RabbitMq.XML

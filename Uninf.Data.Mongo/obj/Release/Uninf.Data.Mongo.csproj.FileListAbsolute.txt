@@ -1,0 +1,10 @@
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\Uninf.Data.Mongo.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\Uninf.Data.Mongo.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\MongoDB.Bson.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\MongoDB.Driver.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\MongoDB.Bson.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\MongoDB.Driver.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\obj\Release\Uninf.Data.Mongo.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\obj\Release\Uninf.Data.Mongo.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\obj\Release\Uninf.Data.Mongo.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Release\Uninf.Data.Mongo.XML

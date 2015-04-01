@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Config.PageTemplate</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Config.PageTemplate.ConfigCshtmlCreator">
+            <summary>
+            Class to produce the template output
+            </summary>
+            <summary>
+            ConfigCshtmlCreator. 类
+            运行tt模板生成mvc view页面
+            </summary>
+        </member>
+        <member name="T:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreatorBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreator.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreator.Initialize">
+            <summary>
+            Initialize the template
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigCshtmlCreator.CreateCshtml``1(System.String,System.String)">
+            <summary>
+            运行模板
+            </summary>
+            <typeparam name="T">config类型，此处传入您的config类型</typeparam>
+            <param name="path">页面保存地址</param>
+            <param name="postAction">表单提交到的controller/action地址</param>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreator.configType">
+            <summary>
+            Access the configType parameter of the template.
+            </summary>
+        </member>
+        <member name="P:Uninf.Config.PageTemplate.ConfigCshtmlCreator.postAction">
+            <summary>
+            Access the postAction parameter of the template.
+            </summary>
+        </member>
+        <member name="T:Uninf.Config.PageTemplate.ConfigExtension">
+            <summary>
+            ConfigExtension. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigExtension.GetDisplayName(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the display name.
+            </summary>
+            <param name="property">The property.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigExtension.IsSimpleType(System.Type)">
+            <summary>
+            Determines whether [is simple type] [the specified type].
+            </summary>
+            <param name="type">The type.</param>
+            <returns><c>true</c> if [is simple type] [the specified type]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigExtension.IsEnumerable(System.Type)">
+            <summary>
+            Determines whether the specified type is enumerable.
+            </summary>
+            <param name="type">The type.</param>
+            <returns><c>true</c> if the specified type is enumerable; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Config.PageTemplate.ConfigExtension.GetDataType(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the type of the data.
+            </summary>
+            <param name="property">The property.</param>
+            <returns>DataType.</returns>
+        </member>
+    </members>
+</doc>

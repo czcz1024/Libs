@@ -1,0 +1,14 @@
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Uninf.Data.Lucene.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Uninf.Data.Lucene.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Lucene.Net.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\PanGu.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\PanGu.HighLight.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\PanGu.Lucene.Analyzer.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Uninf.Data.Lucene.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Uninf.Data.Lucene.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Lucene.Net.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\bin\Debug\Lucene.Net.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\obj\Debug\Uninf.Data.Lucene.Test.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\obj\Debug\Uninf.Data.Lucene.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Lucene.Test\obj\Debug\Uninf.Data.Lucene.Test.pdb

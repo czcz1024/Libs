@@ -1,0 +1,12 @@
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.EntityFramework.dll.config
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.EntityFramework.dll
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.EntityFramework.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\EntityFramework.dll
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.dll
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\EntityFramework.xml
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\obj\Release\Uninf.Data.EntityFramework.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\obj\Release\Uninf.Data.EntityFramework.dll
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\obj\Release\Uninf.Data.EntityFramework.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.EntityFramework.XML
+E:\project2015\thzsplit\libs\Uninf.Data.EntityFramework\bin\Release\Uninf.Data.xml

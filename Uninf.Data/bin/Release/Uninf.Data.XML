@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Data.IRepository`1">
+            <summary>
+            仓储接口
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+        </member>
+        <member name="M:Uninf.Data.IRepository`1.Add(`0)">
+            <summary>
+            添加
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.IRepository`1.Delete(`0)">
+            <summary>
+            删除
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.IRepository`1.Find(System.Object[])">
+            <summary>
+            通过主键查询
+            </summary>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.IRepository`1.AsQueryable">
+            <summary>
+            转换为IQueryable接口，使得可用Linq进行延迟查询
+            </summary>
+            <returns>IQueryable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.IRepository`1.Update(`0)">
+            <summary>
+            整体更新
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.IRepository`1.Update(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            限定字段更新
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="updateProperties">The update properties.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="T:Uninf.Data.IUnitOfWork">
+            <summary>
+            工作单元接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.IUnitOfWork.GetRepository``1">
+            <summary>
+            获取仓储
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns>IRepository&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.IUnitOfWork.SaveChanges">
+            <summary>
+            保存修改
+            </summary>
+            <returns>影响的条数</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Data.Mongo</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Data.Mongo.IMongoConfig">
+            <summary>
+            IMongoConfig 接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.Mongo.IMongoConfig.GetConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.IMongoConfig.GetDatabase">
+            <summary>
+            Gets the database.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Data.Mongo.MongoConfig">
+            <summary>
+            MongoConfig. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoConfig.GetConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoConfig.GetDatabase">
+            <summary>
+            Gets the database.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="P:Uninf.Data.Mongo.MongoConfig.Database">
+            <summary>
+            Gets or sets the database.
+            </summary>
+            <value>The database.</value>
+        </member>
+        <member name="P:Uninf.Data.Mongo.MongoConfig.ConnectionString">
+            <summary>
+            Gets or sets the connection string.
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="T:Uninf.Data.Mongo.MongoDao">
+            <summary>
+            MongoDao. 类
+            </summary>
+        </member>
+        <member name="F:Uninf.Data.Mongo.MongoDao.config">
+            <summary>
+            The configuration
+            </summary>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.#ctor(Uninf.Data.Mongo.IMongoConfig)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Data.Mongo.MongoDao"/> class.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.GetDataBase">
+            <summary>
+            获取MongoDatabase对象
+            </summary>
+            <returns>MongoDatabase.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.GetCollection``1">
+            <summary>
+            获取MongoCollection
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>MongoCollection&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.EnsureIndex``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
+            <summary>
+            Ensures the index.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate">The predicate.</param>
+            <param name="isUnique">if set to <c>true</c> [is unique].</param>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.GetQueryableCollection``1">
+            <summary>
+            以IQueryable形式获取Collection
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>IQueryable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.Add``1(``0)">
+            <summary>
+            添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj">The object.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.BatchAdd``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            批量添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="objs">The objs.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.Update``1(``0)">
+            <summary>
+            更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj">The object.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.Update``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Object}})">
+            <summary>
+            条件更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate">The predicate.</param>
+            <param name="update">The update.</param>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.UpdateIncAll``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}},System.Int32)">
+            <summary>
+            条件更新某一字段
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate">The predicate.</param>
+            <param name="update">The update.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.GetByKey``1(MongoDB.Bson.ObjectId)">
+            <summary>
+            主键获取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="id">The identifier.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.Search``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            查询
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate">The predicate.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.Mongo.MongoDao.Remove``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            删除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate">The predicate.</param>
+        </member>
+        <member name="T:Uninf.Data.Mongo.MongoEntityBase">
+            <summary>
+            MongoEntityBase. 类
+            所有需要放入mongo的对象比较继承自此类
+            </summary>
+        </member>
+        <member name="P:Uninf.Data.Mongo.MongoEntityBase.Id">
+            <summary>
+            id属性
+            </summary>
+            <value>The identifier.</value>
+        </member>
+    </members>
+</doc>

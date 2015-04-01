@@ -1,0 +1,9 @@
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Release\Uninf.CacheData.dll
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Release\Uninf.CacheData.pdb
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Release\Uninf.Cache.dll
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Release\Uninf.Cache.pdb
+E:\project2015\thzsplit\libs\Uninf.CacheData\obj\Release\Uninf.CacheData.dll
+E:\project2015\thzsplit\libs\Uninf.CacheData\obj\Release\Uninf.CacheData.pdb
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Release\Uninf.Cache.xml
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Release\Uninf.CacheData.XML
+E:\project2015\thzsplit\libs\Uninf.CacheData\obj\Release\Uninf.CacheData.csprojResolveAssemblyReference.cache

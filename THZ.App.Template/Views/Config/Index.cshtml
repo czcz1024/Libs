@@ -1,0 +1,203 @@
+﻿
+
+@model THZ.App.Template.Config.AppConfig
+@{    
+    var currentSection=ViewBag.Section;
+	ViewBag.Title="配置管理";
+}
+@if(ViewBag.Result==true){
+<div class="alert alert-success fade in">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+更新成功
+</div>
+}
+@if(ViewBag.Result==false){
+<div class="alert alert-danger fade in">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+更新失败
+</div>
+}
+<section class="container clearfix main_section" style="position: relative;">
+<div class="row">
+<div class="col-sm-12">
+<ul class="nav nav-tabs">
+    <li class="@((currentSection=="QueueConfig" || (true && string.IsNullOrEmpty(currentSection)))?"active":"")">
+        <a href="#QueueConfig" data-toggle="tab" class="@((currentSection=="QueueConfig" || (true && string.IsNullOrEmpty(currentSection)))?"active":"")">QueueConfig</a>
+    </li>
+    <li class="@((currentSection=="RedisConfig" || (false && string.IsNullOrEmpty(currentSection)))?"active":"")">
+        <a href="#RedisConfig" data-toggle="tab" class="@((currentSection=="RedisConfig" || (false && string.IsNullOrEmpty(currentSection)))?"active":"")">RedisConfig</a>
+    </li>
+</ul>
+<div class="tab-content">
+    
+    <div style="border:1px solid #ccc" class="tab-pane @((currentSection=="QueueConfig" || (true && string.IsNullOrEmpty(currentSection)))?"active":"")" id="QueueConfig">
+<div class="alert alert-info"><i class="icon-reorder"></i><span class="panel-title">   QueueConfig</span></div>
+<form role="form" class="form-horizontal" action="/Config/Index" method="post">
+        
+            
+            <input type="hidden" value="QueueConfig" name="section" />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_DetailHandler">DetailHandler</label>
+                    <div class="col-sm-4">
+@Html.EditorFor(x=>x.QueueConfig.DetailHandler)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_PubFriendHandler">PubFriendHandler</label>
+                    <div class="col-sm-4">
+@Html.EditorFor(x=>x.QueueConfig.PubFriendHandler)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_ExchangeName">ExchangeName</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.QueueConfig.ExchangeName,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.QueueConfig.ExchangeName)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_ExchangeType">ExchangeType</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.QueueConfig.ExchangeType,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.QueueConfig.ExchangeType)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_ConnectionString">ConnectionString</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.QueueConfig.ConnectionString,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.QueueConfig.ConnectionString)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_RetryExchangeName">RetryExchangeName</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.QueueConfig.RetryExchangeName,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.QueueConfig.RetryExchangeName)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_RetryWaitSecond">RetryWaitSecond</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.QueueConfig.RetryWaitSecond,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.QueueConfig.RetryWaitSecond)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_DeadExchangeName">DeadExchangeName</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.QueueConfig.DeadExchangeName,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.QueueConfig.DeadExchangeName)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_DeadQueueName">DeadQueueName</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.QueueConfig.DeadQueueName,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.QueueConfig.DeadQueueName)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_RetryTimes">RetryTimes</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.QueueConfig.RetryTimes,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.QueueConfig.RetryTimes)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_AutoRetry">AutoRetry</label>
+                    <div class="col-sm-4">
+                        <div class="make-switch" data-on-label="<i class='glyphicon glyphicon-ok'></i>" data-off-label="<i class='glyphicon glyphicon-remove'></i>">
+                            @Html.CheckBoxFor(x=>x.QueueConfig.AutoRetry)
+                        </div>
+@Html.ValidationMessageFor(x=>x.QueueConfig.AutoRetry)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="QueueConfig_ConnectTimeOut">ConnectTimeOut</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.QueueConfig.ConnectTimeOut,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.QueueConfig.ConnectTimeOut)                                           
+                    </div>
+                </div>
+  
+            <div class="form-actions" style="margin-bottom:0; height:70px;"><div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>确定</button></div>
+            </div>
+        </form>
+</div>
+    
+    <div style="border:1px solid #ccc" class="tab-pane @((currentSection=="RedisConfig" || (false && string.IsNullOrEmpty(currentSection)))?"active":"")" id="RedisConfig">
+<div class="alert alert-info"><i class="icon-reorder"></i><span class="panel-title">   RedisConfig</span></div>
+<form role="form" class="form-horizontal" action="/Config/Index" method="post">
+        
+            
+            <input type="hidden" value="RedisConfig" name="section" />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="RedisConfig_ConnectionStrings">ConnectionStrings</label>
+                    <div class="col-sm-4">
+                            <ul class="list-group">
+                                @{
+                                    var modelMetaRedisConfig_ConnectionStrings=ModelMetadata.FromStringExpression("RedisConfig.ConnectionStrings",Html.ViewData);
+                                    var dicRedisConfig_ConnectionStrings=Html.GetUnobtrusiveValidationAttributes("RedisConfig.ConnectionStrings",modelMetaRedisConfig_ConnectionStrings);
+                                    dicRedisConfig_ConnectionStrings["class"]="form-control";
+                                }
+                                
+@foreach(var item in Model.RedisConfig.ConnectionStrings)
+                                {
+                                    <li class="list-group-item">
+                                        <div class="input-group">
+@Html.TextBox("RedisConfig.ConnectionStrings",item,new{@class="form-control"})
+                                            @Html.ValidationMessage("RedisConfig.ConnectionStrings")   
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-warning" onclick="javascript:if($(this).parents('ul').find('li').length<=2){alert('至少1个');return false;}if(confirm('确定删除？')) $(this).parents('li').remove()">删除</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                    <button type="button" class="btn btn-primary" onclick="javascript:$(this).parent().before($(this).parent().prev().clone(true));$(this).parent().prev().find('input').val('')">添加</button>
+                                </li>
+                                }
+                                
+                            </ul>
+                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="RedisConfig_ConnectTimeOut">ConnectTimeOut</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.RedisConfig.ConnectTimeOut,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.RedisConfig.ConnectTimeOut)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="RedisConfig_SendTimeOut">SendTimeOut</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.RedisConfig.SendTimeOut,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.RedisConfig.SendTimeOut)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="RedisConfig_ReciveTimeOut">ReciveTimeOut</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.RedisConfig.ReciveTimeOut,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.RedisConfig.ReciveTimeOut)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="RedisConfig_KeyPrefix">KeyPrefix</label>
+                    <div class="col-sm-4">
+@Html.TextBoxFor(x=>x.RedisConfig.KeyPrefix,new{@class="form-control col-sm-8"})@Html.ValidationMessageFor(x=>x.RedisConfig.KeyPrefix)                                           
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="RedisConfig_DbIndex">DbIndex</label>
+                    <div class="col-sm-4">
+                            @Html.TextBoxFor(x=>x.RedisConfig.DbIndex,new{@class="form-control col-sm-8"})
+    @Html.ValidationMessageFor(x=>x.RedisConfig.DbIndex)                                           
+                    </div>
+                </div>
+  
+            <div class="form-actions" style="margin-bottom:0; height:70px;"><div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>确定</button></div>
+            </div>
+        </form>
+</div>
+</div>
+</div>
+</div>
+</section>

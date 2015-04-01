@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="http://www.tuohuangzu.com/Content/newtheme/base/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://www.tuohuangzu.com/content/Default/comment.css" media="all" />
+    <link href="http://www.tuohuangzu.com/Content/newtheme/common/css/common.css" rel="stylesheet" />
+    <script src="http://www.tuohuangzu.com/Scripts/jquery-1.8.2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://www.tuohuangzu.com/Content/newtheme/common/js/thz_marketing.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        $(function () {
+            marketimgIndexFn();
+        });
+    </script>
+</head>
+<body>
+    @{
+        Html.RenderAction("Header", "Common");
+    }
+    @RenderBody()
+    @{
+        Html.RenderAction("Footer", "Common");
+    }
+    @RenderSection("scripts",false)
+</body>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Data.Lucene</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Data.Lucene.ILuceneSearch">
+            <summary>
+            ILuceneSearch 接口
+            为批量依赖注入注册提供
+            </summary>
+        </member>
+        <member name="T:Uninf.Data.Lucene.ILuceneSearch`2">
+            <summary>
+            ILuceneSearch 接口
+            </summary>
+            <typeparam name="T">数据元素</typeparam>
+            <typeparam name="TSearch">搜索方式</typeparam>
+        </member>
+        <member name="M:Uninf.Data.Lucene.ILuceneSearch`2.Rebuild(System.Boolean)">
+            <summary>
+            重建索引
+            </summary>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.ILuceneSearch`2.Add(`0,System.Boolean)">
+            <summary>
+            添加元素
+            </summary>
+            <param name="item">The item.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.ILuceneSearch`2.Update(`0,System.Boolean)">
+            <summary>
+            更新元素
+            </summary>
+            <param name="item">The item.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.ILuceneSearch`2.Delete(`0,System.Boolean)">
+            <summary>
+            删除元素
+            </summary>
+            <param name="item">The item.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.ILuceneSearch`2.Search(`1,System.Int32,System.Int32,System.Int64@)">
+            <summary>
+            搜索
+            </summary>
+            <param name="search">The search.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="all">All.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Data.Lucene.LuceneSearchBase`2">
+            <summary>
+            LuceneSearchBase. 类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TSearch">The type of the t search.</typeparam>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.IndexPath">
+            <summary>
+            索引保存路径
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.GetData">
+            <summary>
+            重建时读取原始数据
+            </summary>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.GetAnalyzer">
+            <summary>
+            使用的analyzer
+            </summary>
+            <returns>Analyzer.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.ConvertToLuceneDocument(`0)">
+            <summary>
+            将元素转换成lucenen的document
+            </summary>
+            <param name="item">The item.</param>
+            <returns>Document.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.ConvertToObj(Lucene.Net.Documents.Document)">
+            <summary>
+            将lucene document转换成元素
+            </summary>
+            <param name="doc">The document.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.IdKey">
+            <summary>
+            id对应的名称
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.IdValue(`0)">
+            <summary>
+            id对应的值
+            </summary>
+            <param name="item">The item.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.Rebuild(System.Boolean)">
+            <summary>
+            Rebuilds the specified force.
+            </summary>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.Add(`0,System.Boolean)">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.Update(`0,System.Boolean)">
+            <summary>
+            Updates the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.Delete(`0,System.Boolean)">
+            <summary>
+            Deletes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.Search(`1,System.Int32,System.Int32,System.Int64@)">
+            <summary>
+            Searches the specified query.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="all">All.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.SearchCount">
+            <summary>
+            搜索结果最大数量
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.GetQuery(`1)">
+            <summary>
+            搜索方式
+            </summary>
+            <param name="search">The search.</param>
+            <returns>Query.</returns>
+        </member>
+        <member name="M:Uninf.Data.Lucene.LuceneSearchBase`2.GetFilter">
+            <summary>
+            过滤方式
+            </summary>
+            <returns>Filter.</returns>
+        </member>
+    </members>
+</doc>

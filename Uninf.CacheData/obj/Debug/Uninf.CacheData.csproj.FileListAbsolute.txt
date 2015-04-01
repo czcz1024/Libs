@@ -1,0 +1,6 @@
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Debug\Uninf.CacheData.dll
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Debug\Uninf.CacheData.pdb
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Debug\Uninf.Cache.dll
+E:\project2015\thzsplit\libs\Uninf.CacheData\bin\Debug\Uninf.Cache.pdb
+E:\project2015\thzsplit\libs\Uninf.CacheData\obj\Debug\Uninf.CacheData.dll
+E:\project2015\thzsplit\libs\Uninf.CacheData\obj\Debug\Uninf.CacheData.pdb

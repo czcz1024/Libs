@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Log.NLog</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Log.NLog.NLogConfig">
+            <summary>
+            NLog配置类
+            </summary>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogConfig.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Log.NLog.NLogConfig"/> class.
+            </summary>
+        </member>
+        <member name="P:Uninf.Log.NLog.NLogConfig.Layout">
+            <summary>
+            日志Layout
+            </summary>
+            <value>The layout.</value>
+        </member>
+        <member name="P:Uninf.Log.NLog.NLogConfig.FileSaveDir">
+            <summary>
+            保存路径
+            </summary>
+            <value>The file save dir.</value>
+        </member>
+        <member name="T:Uninf.Log.NLog.NLogConfigLogger">
+            <summary>
+            代码配置的NLog日志类
+            </summary>
+        </member>
+        <member name="T:Uninf.Log.NLog.NLogLogger">
+            <summary>
+            NLog日志类
+            </summary>
+        </member>
+        <member name="F:Uninf.Log.NLog.NLogLogger.log">
+            <summary>
+            NLog Logger对象
+            </summary>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogLogger.Error(System.String)">
+            <summary>
+            错误
+            </summary>
+            <param name="msg">信息</param>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogLogger.Debug(System.String)">
+            <summary>
+            调试
+            </summary>
+            <param name="msg">信息</param>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogLogger.Info(System.String)">
+            <summary>
+            记录
+            </summary>
+            <param name="msg">信息</param>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogLogger.GetLogger">
+            <summary>
+            获取NLog的Logger对象
+            </summary>
+            <returns>Logger.</returns>
+        </member>
+        <member name="F:Uninf.Log.NLog.NLogConfigLogger.config">
+            <summary>
+            NLog配置
+            </summary>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogConfigLogger.#ctor(Uninf.Log.NLog.NLogConfig)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Log.NLog.NLogConfigLogger"/> class.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:Uninf.Log.NLog.NLogConfigLogger.GetLogger">
+            <summary>
+            获取NLog的Logger对象，此方法实现了根据日志区分日志文件
+            </summary>
+            <returns>Logger.</returns>
+        </member>
+    </members>
+</doc>

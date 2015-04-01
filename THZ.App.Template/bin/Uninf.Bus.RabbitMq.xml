@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Bus.RabbitMq</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Bus.RabbitMq.IRabbitServerConfig">
+            <summary>
+            IRabbitServerConfig 接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetExchange">
+            <summary>
+            Gets the exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetRoute(System.Type)">
+            <summary>
+            Gets the route.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetExchangeType">
+            <summary>
+            Gets the type of the exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetDeadExchange">
+            <summary>
+            Gets the dead exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetDeadQueue">
+            <summary>
+            Gets the dead queue.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetRetryExchange">
+            <summary>
+            Gets the retry exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetRetryTimes">
+            <summary>
+            Gets the retry times.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetRetryWaitSeconds">
+            <summary>
+            Gets the retry wait seconds.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.GetConnectTimeOut">
+            <summary>
+            Gets the connect time out.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.LogHandlerError(System.Exception,System.Type)">
+            <summary>
+            Logs the handler error.
+            </summary>
+            <param name="ex">The ex.</param>
+            <param name="handlerType">Type of the handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.LogServerError(System.Exception)">
+            <summary>
+            Logs the server error.
+            </summary>
+            <param name="ex">The ex.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.IRabbitServerConfig.AutoRetryWhenServerDown">
+            <summary>
+            Automatics the retry when server down.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Uninf.Bus.RabbitMq.RabbitMqBus">
+            <summary>
+            RabbitMqBus. 类
+            基于rabbitmq的总线基类
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqBus.config">
+            <summary>
+            The configuration
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqBus.serializor">
+            <summary>
+            The serializor
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.#ctor(Uninf.Bus.RabbitMq.IRabbitServerConfig,Uninf.Bus.IMessageSerializer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.RabbitMq.RabbitMqBus"/> class.
+            </summary>
+            <param name="config">The configuration.</param>
+            <param name="serializor">The serializor.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.SendToQueue``1(``0)">
+            <summary>
+            Sends to queue.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.BeforeSendToQueue``1(RabbitMQ.Client.IBasicProperties,``0)">
+            <summary>
+            Befores the send to queue.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="e">The e.</param>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.AfterSendToQueue``1(RabbitMQ.Client.IBasicProperties,``0)">
+            <summary>
+            Afters the send to queue.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="e">The e.</param>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.BeforeSend``1(``0)">
+            <summary>
+            Befores the send.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.AfterSend``1(``0)">
+            <summary>
+            Afters the send.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.Send``1(``0)">
+            <summary>
+            Sends the specified MSG.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.Call``2(``0)">
+            <summary>
+            Calls the specified MSG.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult">The type of the t result.</typeparam>
+            <param name="msg">The MSG.</param>
+            <returns>TResult.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.BeforeCall``2(``0)">
+            <summary>
+            Befores the call.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult">The type of the t result.</typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqBus.AfterCall``2(``0,``1)">
+            <summary>
+            Afters the call.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult">The type of the t result.</typeparam>
+            <param name="msg">The MSG.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="T:Uninf.Bus.RabbitMq.RabbitMqListener">
+            <summary>
+            RabbitMqListener. 类
+            监听Rabbitmq实现基类
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqListener.config">
+            <summary>
+            The configuration
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqListener.db">
+            <summary>
+            The database
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.#ctor(Uninf.Bus.IHandlerThreadStore,Uninf.Bus.RabbitMq.IRabbitServerConfig)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.RabbitMq.RabbitMqListener"/> class.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.Start(Uninf.Bus.IHandler)">
+            <summary>
+            Starts the specified handler.
+            </summary>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.Stop(System.Type,System.Int32)">
+            <summary>
+            Stops the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="threadId">The thread identifier.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.StopAll(System.Type)">
+            <summary>
+            Stops all.
+            </summary>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.DeleteAsyncHandler(Uninf.Bus.IHandler)">
+            <summary>
+            Deletes the asynchronous handler.
+            </summary>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.DeleteQueueWhenAllDone(Uninf.Bus.IHandler)">
+            <summary>
+            Deletes the queue when all done.
+            </summary>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqListener.lastErrFix">
+            <summary>
+            The last error fix
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.GetThreadId">
+            <summary>
+            Gets the thread identifier.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.StartListen(Uninf.Bus.IHandler,System.Threading.CancellationTokenSource)">
+            <summary>
+            Starts the listen.
+            </summary>
+            <param name="handler">The handler.</param>
+            <param name="c">The c.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.ReConnectWait">
+            <summary>
+            Res the connect wait.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.SaveDoneMessage(RabbitMQ.Client.IBasicProperties,System.String,System.String)">
+            <summary>
+            Saves the done message.
+            </summary>
+            <param name="basicProperties">The basic properties.</param>
+            <param name="routingKey">The routing key.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.GetRetryTimes(RabbitMQ.Client.IBasicProperties,System.String,System.Exception)">
+            <summary>
+            Gets the retry times.
+            </summary>
+            <param name="e">The e.</param>
+            <param name="message">The message.</param>
+            <param name="exp">The exp.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.AddRetryTime(RabbitMQ.Client.IBasicProperties,System.String,System.Exception)">
+            <summary>
+            Adds the retry time.
+            </summary>
+            <param name="e">The e.</param>
+            <param name="message">The message.</param>
+            <param name="exp">The exp.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.SaveListener(System.Int32,System.Object,Uninf.Bus.IHandler)">
+            <summary>
+            Saves the listener.
+            </summary>
+            <param name="threadid">The threadid.</param>
+            <param name="c">The c.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.DeleteListener(System.Int32,Uninf.Bus.IHandler)">
+            <summary>
+            Deletes the listener.
+            </summary>
+            <param name="threadid">The threadid.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.QueueName(Uninf.Bus.IHandler)">
+            <summary>
+            Queues the name.
+            </summary>
+            <param name="handler">The handler.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.RetryRouteKeyOrTopic(Uninf.Bus.IHandler)">
+            <summary>
+            Retries the route key or topic.
+            </summary>
+            <param name="handler">The handler.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.RouteKeyOrTopic(Uninf.Bus.IHandler)">
+            <summary>
+            Routes the key or topic.
+            </summary>
+            <param name="handler">The handler.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.RetryQueueName(Uninf.Bus.IHandler)">
+            <summary>
+            Retries the name of the queue.
+            </summary>
+            <param name="handler">The handler.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.RetryWaitSecond">
+            <summary>
+            Retries the wait second.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.RetryTimes">
+            <summary>
+            Retries the times.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqListener.IsSkipThisMessage(RabbitMQ.Client.IBasicProperties,System.String,System.String)">
+            <summary>
+            Determines whether [is skip this message] [the specified e].
+            </summary>
+            <param name="e">The e.</param>
+            <param name="routingKey">The routing key.</param>
+            <param name="msg">The MSG.</param>
+            <returns><c>true</c> if [is skip this message] [the specified e]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Uninf.Bus.RabbitMq.RabbitMqReconnectManager">
+            <summary>
+            RabbitMqReconnectManager. 类
+            重新连接服务管理类
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.RabbitMq.RabbitMqReconnectManager"/> class.
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.locker">
+            <summary>
+            The locker
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.started">
+            <summary>
+            The started
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.lis">
+            <summary>
+            The lis
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.handlers">
+            <summary>
+            The handlers
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.RetryConnect(System.String,System.Int32,Uninf.Bus.IListener,Uninf.Bus.IHandler)">
+            <summary>
+            Retries the connect.
+            </summary>
+            <param name="connstr">The connstr.</param>
+            <param name="sleep">The sleep.</param>
+            <param name="listener">The listener.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.retry(System.String,System.Int32)">
+            <summary>
+            Retries the specified connstr.
+            </summary>
+            <param name="connstr">The connstr.</param>
+            <param name="sleep">The sleep.</param>
+        </member>
+        <member name="P:Uninf.Bus.RabbitMq.RabbitMqReconnectManager.Current">
+            <summary>
+            Gets the current.
+            </summary>
+            <value>The current.</value>
+        </member>
+        <member name="T:Uninf.Bus.RabbitMq.RabbitMqResourceManager">
+            <summary>
+            RabbitMqResourceManager. 类
+            提供rabbitmq的事务支持
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqResourceManager._channel">
+            <summary>
+            The _channel
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.RabbitMq.RabbitMqResourceManager._conn">
+            <summary>
+            The _conn
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqResourceManager.#ctor(RabbitMQ.Client.IConnection,RabbitMQ.Client.IModel,System.Transactions.Transaction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.RabbitMq.RabbitMqResourceManager"/> class.
+            </summary>
+            <param name="conn">The connection.</param>
+            <param name="channel">The channel.</param>
+            <param name="transaction">The transaction.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqResourceManager.#ctor(RabbitMQ.Client.IConnection,RabbitMQ.Client.IModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.RabbitMq.RabbitMqResourceManager"/> class.
+            </summary>
+            <param name="conn">The connection.</param>
+            <param name="channel">The channel.</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqResourceManager.Commit(System.Transactions.Enlistment)">
+            <summary>
+            通知登记的对象事务正在提交。
+            </summary>
+            <param name="enlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.Enlistment" /> 对象。</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqResourceManager.InDoubt(System.Transactions.Enlistment)">
+            <summary>
+            通知登记的对象事务的状态不确定。
+            </summary>
+            <param name="enlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.Enlistment" /> 对象。</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqResourceManager.Prepare(System.Transactions.PreparingEnlistment)">
+            <summary>
+            通知登记的对象事务正在为提交做准备。
+            </summary>
+            <param name="preparingEnlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.PreparingEnlistment" /> 对象。</param>
+        </member>
+        <member name="M:Uninf.Bus.RabbitMq.RabbitMqResourceManager.Rollback(System.Transactions.Enlistment)">
+            <summary>
+            通知登记的对象事务正在回滚（中止）。
+            </summary>
+            <param name="enlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.Enlistment" /> 对象。</param>
+        </member>
+    </members>
+</doc>

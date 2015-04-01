@@ -1,0 +1,10 @@
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\Uninf.Config.Mvc5.dll.config
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\Uninf.Config.Mvc5.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\Uninf.Config.Mvc5.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\System.Web.Mvc.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\Uninf.Config.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\bin\Debug\System.Web.Mvc.xml
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\obj\Debug\Uninf.Config.Mvc5.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\obj\Debug\Uninf.Config.Mvc5.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Mvc5\obj\Debug\Uninf.Config.Mvc5.pdb

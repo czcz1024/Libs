@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Model.Automapper</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Model.Automapper.AutoMapperConverter`2">
+            <summary>
+            AutoMapperConverter类
+            </summary>
+            <typeparam name="TSource">源类型</typeparam>
+            <typeparam name="TTarget">目标类型</typeparam>
+        </member>
+        <member name="T:Uninf.Model.Automapper.IModelConverterRegister">
+            <summary>
+            IModelConverterRegister 接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Model.Automapper.IModelConverterRegister.Regist">
+            <summary>
+            注册模型转换器
+            用于依赖注入批量注册
+            </summary>
+        </member>
+        <member name="M:Uninf.Model.Automapper.AutoMapperConverter`2.Convert(`0)">
+            <summary>
+            转换
+            </summary>
+            <param name="source">源对象</param>
+            <returns>目标对象</returns>
+        </member>
+        <member name="M:Uninf.Model.Automapper.AutoMapperConverter`2.Regist">
+            <summary>
+            注册模型转换器
+            用于依赖注入批量注册
+            </summary>
+        </member>
+    </members>
+</doc>

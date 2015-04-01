@@ -1,0 +1,9 @@
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\bin\Debug\Uninf.Log.Log4Net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\bin\Debug\Uninf.Log.Log4Net.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\bin\Debug\log4net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\bin\Debug\Uninf.Log.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\bin\Debug\Uninf.Log.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\bin\Debug\log4net.xml
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\obj\Debug\Uninf.Log.Log4Net.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\obj\Debug\Uninf.Log.Log4Net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Log4Net\obj\Debug\Uninf.Log.Log4Net.pdb

@@ -1,0 +1,27 @@
+﻿@model IDictionary<Type, List<Tuple<int,object>>>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<h2>Index</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        @item.Key.Name
+        @Html.ActionLink("add","Add","BusConfig",new{name=item.Key.FullName},new{})
+        @Html.ActionLink("del all","DelAll","BusConfig",new{name=item.Key.FullName},new{})
+        @Html.ActionLink("a2n","A2N","BusConfig",new{name=item.Key.FullName},new{})
+        <ul>
+            @foreach (var h in item.Value)
+            {
+                <li>
+                    @h.Item1
+                    @Html.ActionLink("del", "Del", "BusConfig", new { name = item.Key.FullName, id = h.Item1 }, new { })
+                </li>
+            }
+        </ul>
+    </div>
+}

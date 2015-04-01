@@ -1,0 +1,4 @@
+E:\project2015\thzsplit\libs\Uninf.Model\bin\Debug\Uninf.Model.dll
+E:\project2015\thzsplit\libs\Uninf.Model\bin\Debug\Uninf.Model.pdb
+E:\project2015\thzsplit\libs\Uninf.Model\obj\Debug\Uninf.Model.dll
+E:\project2015\thzsplit\libs\Uninf.Model\obj\Debug\Uninf.Model.pdb

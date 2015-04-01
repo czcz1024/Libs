@@ -1,0 +1,12 @@
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Uninf.Auth.CommonServiceLocator.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Uninf.Auth.CommonServiceLocator.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Uninf.Auth.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Uninf.Auth.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\obj\Release\Uninf.Auth.CommonServiceLocator.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\obj\Release\Uninf.Auth.CommonServiceLocator.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\obj\Release\Uninf.Auth.CommonServiceLocator.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Uninf.Auth.CommonServiceLocator.XML
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Release\Uninf.Auth.xml

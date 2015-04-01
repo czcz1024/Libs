@@ -1,0 +1,5 @@
+E:\project2015\thzsplit\libs\Uninf.Model\bin\Release\Uninf.Model.dll
+E:\project2015\thzsplit\libs\Uninf.Model\bin\Release\Uninf.Model.pdb
+E:\project2015\thzsplit\libs\Uninf.Model\obj\Release\Uninf.Model.dll
+E:\project2015\thzsplit\libs\Uninf.Model\obj\Release\Uninf.Model.pdb
+E:\project2015\thzsplit\libs\Uninf.Model\bin\Release\Uninf.Model.XML

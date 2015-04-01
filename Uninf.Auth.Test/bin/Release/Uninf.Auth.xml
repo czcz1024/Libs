@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Auth</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Auth.AuthManagers`1">
+            <summary>
+            用户身份管理入口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Auth.AuthManagers`1.Login(`0)">
+            <summary>
+            登陆
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:Uninf.Auth.AuthManagers`1.Logout">
+            <summary>
+            退出
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.AuthManagers`1.IsLog">
+            <summary>
+            是否登陆
+            </summary>
+            <returns><c>true</c> if this instance is log; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Auth.AuthManagers`1.GetNowUser">
+            <summary>
+            获取当前登陆信息
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="T:Uninf.Auth.AuthOperator`1">
+            <summary>
+            身份操作基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Uninf.Auth.IAuthOperator`1">
+            <summary>
+            身份验证流程需要用到的操作
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Auth.IAuthOperator`1.Encryptor">
+            <summary>
+            加密器
+            </summary>
+            <returns>IAuthInfoEncryptor.</returns>
+        </member>
+        <member name="M:Uninf.Auth.IAuthOperator`1.Serializer">
+            <summary>
+            序列化器
+            </summary>
+            <returns>IAuthInfoSerializer&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Auth.IAuthOperator`1.Storager">
+            <summary>
+            存储器
+            </summary>
+            <returns>IAuthInfoStorage.</returns>
+        </member>
+        <member name="M:Uninf.Auth.IAuthOperator`1.StorageName">
+            <summary>
+            存储时，使用的key 或 name
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="F:Uninf.Auth.AuthOperator`1.encryptor">
+            <summary>
+            The encryptor
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.AuthOperator`1.serializer">
+            <summary>
+            The serializer
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.AuthOperator`1.storage">
+            <summary>
+            The storage
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.AuthOperator`1.#ctor(Uninf.Auth.IAuthInfoEncryptor,Uninf.Auth.IAuthInfoSerializer{`0},Uninf.Auth.IAuthInfoStorage)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Auth.AuthOperator`1"/> class.
+            </summary>
+            <param name="encryptor">The encryptor.</param>
+            <param name="serializer">The serializer.</param>
+            <param name="storage">The storage.</param>
+        </member>
+        <member name="M:Uninf.Auth.AuthOperator`1.#ctor(Uninf.Auth.IAuthInfoSerializer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Auth.AuthOperator`1"/> class.
+            </summary>
+            <param name="serializer">The serializer.</param>
+        </member>
+        <member name="M:Uninf.Auth.AuthOperator`1.Encryptor">
+            <summary>
+            Encryptors this instance.
+            </summary>
+            <returns>IAuthInfoEncryptor.</returns>
+        </member>
+        <member name="M:Uninf.Auth.AuthOperator`1.Serializer">
+            <summary>
+            Serializers this instance.
+            </summary>
+            <returns>IAuthInfoSerializer&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Auth.AuthOperator`1.Storager">
+            <summary>
+            Storagers this instance.
+            </summary>
+            <returns>IAuthInfoStorage.</returns>
+        </member>
+        <member name="M:Uninf.Auth.AuthOperator`1.StorageName">
+            <summary>
+            Storages the name.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Auth.IAuthContainer">
+            <summary>
+            IAuthContainer 接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.IAuthContainer.GetInstance``1">
+            <summary>
+            Gets the instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>T.</returns>
+        </member>
+        <member name="T:Uninf.Auth.AuthContainer">
+            <summary>
+            AuthContainer. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.AuthContainer.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Uninf.Auth.AuthContainer"/> class.
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.AuthContainer.SetAuthContainer(Uninf.Auth.IAuthContainer)">
+            <summary>
+            Sets the authentication container.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="P:Uninf.Auth.AuthContainer.Current">
+            <summary>
+            Gets the current.
+            </summary>
+            <value>The current.</value>
+        </member>
+        <member name="T:Uninf.Auth.DefaultAuthContainer">
+            <summary>
+            DefaultAuthContainer. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.DefaultAuthContainer.GetInstance``1">
+            <summary>
+            Gets the instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>T.</returns>
+            <exception cref="T:System.Exception">请使用AuthContainer.SetAuthContainer(...)设置依赖注入容器</exception>
+        </member>
+        <member name="T:Uninf.Auth.IAuthInfo">
+            <summary>
+            标识为一个身份信息
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfo.AuthRole">
+            <summary>
+            此种身份代表的角色
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Auth.IAuthInfoEncryptor">
+            <summary>
+            身份信息的加密解密
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoEncryptor.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="src">The source.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoEncryptor.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="src">The source.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Auth.IAuthInfoSerializer`1">
+            <summary>
+            身份信息的序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoSerializer`1.Serialize(`0)">
+            <summary>
+            序列化
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoSerializer`1.Deserialize(System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="src">The source.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="T:Uninf.Auth.IAuthInfoStorage">
+            <summary>
+            身份信息在客户端的存储
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoStorage.Save(System.String,System.String)">
+            <summary>
+            保存到客户端
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoStorage.Load(System.String)">
+            <summary>
+            从客户端读取
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.IAuthInfoStorage.Clear(System.String)">
+            <summary>
+            清除客户端保存的数据
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="T:Uninf.Auth.IPrincipalSetter">
+            <summary>
+            设置身份信息到上下文的接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.IPrincipalSetter.SetToPrincipal">
+            <summary>
+            设置
+            </summary>
+        </member>
+        <member name="T:Uninf.Auth.THZCookieAuthInfoStorage">
+            <summary>
+            基于Cookie的身份保存
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.THZCookieAuthInfoStorage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Auth.THZCookieAuthInfoStorage"/> class.
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.THZCookieAuthInfoStorage.path">
+            <summary>
+            The path
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.THZCookieAuthInfoStorage.domain">
+            <summary>
+            The domain
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.THZCookieAuthInfoStorage.expire">
+            <summary>
+            The expire
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.THZCookieAuthInfoStorage.httpOnly">
+            <summary>
+            The HTTP only
+            </summary>
+        </member>
+        <member name="F:Uninf.Auth.THZCookieAuthInfoStorage.secure">
+            <summary>
+            The secure
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.THZCookieAuthInfoStorage.Save(System.String,System.String)">
+            <summary>
+            保存到客户端
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Auth.THZCookieAuthInfoStorage.Load(System.String)">
+            <summary>
+            从客户端读取
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.THZCookieAuthInfoStorage.Clear(System.String)">
+            <summary>
+            清除客户端保存的数据
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="T:Uninf.Auth.THZDesEncryptor">
+            <summary>
+            Des加密方式
+            </summary>
+        </member>
+        <member name="M:Uninf.Auth.THZDesEncryptor.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="src">The source.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.THZDesEncryptor.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="src">The source.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.THZDesEncryptor.GetEncryptKey">
+            <summary>
+            dec加密方式中用到的key
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Auth.THZDesEncryptor.GetEncryptVi">
+            <summary>
+            dec加密方式中用到的vi
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+    </members>
+</doc>

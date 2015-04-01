@@ -1,0 +1,15 @@
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Test\obj\Debug\Uninf.Config.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\obj\Debug\Uninf.Config.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Test\obj\Debug\Uninf.Config.Test.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.Mvc5.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.PageTemplate.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\System.Web.Mvc.dll
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.Mvc5.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.PageTemplate.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\Uninf.Config.pdb
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\System.Web.Mvc.xml
+E:\project2015\thzsplit\libs\Uninf.Config.Test\bin\Debug\zh-Hans\Microsoft.QualityTools.Testing.Fakes.resources.dll

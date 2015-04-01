@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.TimeTask</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.TimeTask.ITimeTask">
+            <summary>
+            定时任务接口
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.ITimeTask.Exec">
+            <summary>
+            执行任务
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.ITimeTask.RunTime">
+            <summary>
+            执行时间
+            </summary>
+            <returns>Corn表达式</returns>
+        </member>
+        <member name="T:Uninf.TimeTask.ITimeTaskServer">
+            <summary>
+            定时任务服务管理接口
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.ITimeTaskServer.StartAll">
+            <summary>
+            启动所有定时任务
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.ITimeTaskServer.StopAll">
+            <summary>
+            停止所有定时任务
+            </summary>
+        </member>
+    </members>
+</doc>

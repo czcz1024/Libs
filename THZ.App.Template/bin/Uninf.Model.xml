@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Model.IModelConverter">
+            <summary>
+            IModelConverter 接口
+            模型转换，用于批量依赖注入
+            </summary>
+        </member>
+        <member name="T:Uninf.Model.IModelConverter`2">
+            <summary>
+            IModelConverter 接口
+            模型转换
+            </summary>
+            <typeparam name="TSource">源类型</typeparam>
+            <typeparam name="TTarget">目标类型</typeparam>
+        </member>
+        <member name="M:Uninf.Model.IModelConverter`2.Convert(`0)">
+            <summary>
+            转换
+            </summary>
+            <param name="source">源对象</param>
+            <returns>目标对象</returns>
+        </member>
+    </members>
+</doc>

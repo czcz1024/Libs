@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Bus.THZ</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Bus.THZ.HandlerThreadStore">
+            <summary>
+            HandlerThreadStore. 类
+            监听线程保存实现
+            </summary>
+        </member>
+        <member name="F:Uninf.Bus.THZ.HandlerThreadStore.Dic">
+            <summary>
+            The dic
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.THZ.HandlerThreadStore.Add(System.Type,System.Int32,System.Object)">
+            <summary>
+            Adds the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="threadid">The threadid.</param>
+            <param name="c">The c.</param>
+        </member>
+        <member name="M:Uninf.Bus.THZ.HandlerThreadStore.Delete(System.Type,System.Int32)">
+            <summary>
+            Deletes the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="threadid">The threadid.</param>
+        </member>
+        <member name="M:Uninf.Bus.THZ.HandlerThreadStore.Get(System.Type,System.Int32)">
+            <summary>
+            Gets the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="threadid">The threadid.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.HandlerThreadStore.GetAll">
+            <summary>
+            Gets all.
+            </summary>
+            <returns>IDictionary&lt;Type, List&lt;Tuple&lt;System.Int32, System.Object&gt;&gt;&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Bus.THZ.THZListener">
+            <summary>
+            THZListener. 类
+            为thz项目配置过的线程监听类
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.#ctor(Uninf.Bus.IHandlerThreadStore,Uninf.Bus.RabbitMq.IRabbitServerConfig)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.THZ.THZListener"/> class.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.SaveDoneMessage(RabbitMQ.Client.IBasicProperties,System.String,System.String)">
+            <summary>
+            保存处理成功的消息
+            </summary>
+            <param name="basicProperties">The basic properties.</param>
+            <param name="routingKey">The routing key.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.QueueName(Uninf.Bus.IHandler)">
+            <summary>
+            队列名称
+            </summary>
+            <param name="handler">The handler.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.RouteKeyOrTopic(Uninf.Bus.IHandler)">
+            <summary>
+            关键字
+            </summary>
+            <param name="handler">The handler.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.RetryWaitSecond">
+            <summary>
+            重试间隔时间
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.RetryTimes">
+            <summary>
+            重试次数
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZListener.IsSkipThisMessage(RabbitMQ.Client.IBasicProperties,System.String,System.String)">
+            <summary>
+            判断是否跳过消息
+            </summary>
+            <param name="e">The e.</param>
+            <param name="routingKey">The routing key.</param>
+            <param name="msg">The MSG.</param>
+            <returns><c>true</c> if [is skip this message] [the specified e]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Uninf.Bus.THZ.THZQueueConfig">
+            <summary>
+            THZQueueConfig. 类
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetExchange">
+            <summary>
+            Gets the exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetRoute(System.Type)">
+            <summary>
+            Gets the route.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetExchangeType">
+            <summary>
+            Gets the type of the exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetDeadExchange">
+            <summary>
+            Gets the dead exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetDeadQueue">
+            <summary>
+            Gets the dead queue.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetRetryExchange">
+            <summary>
+            Gets the retry exchange.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetRetryTimes">
+            <summary>
+            Gets the retry times.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetRetryWaitSeconds">
+            <summary>
+            Gets the retry wait seconds.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.GetConnectTimeOut">
+            <summary>
+            Gets the connect time out.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.LogHandlerError(System.Exception,System.Type)">
+            <summary>
+            Logs the handler error.
+            </summary>
+            <param name="ex">The ex.</param>
+            <param name="handlerType">Type of the handler.</param>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.LogServerError(System.Exception)">
+            <summary>
+            Logs the server error.
+            </summary>
+            <param name="ex">The ex.</param>
+        </member>
+        <member name="M:Uninf.Bus.THZ.THZQueueConfig.AutoRetryWhenServerDown">
+            <summary>
+            Automatics the retry when server down.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.ExchangeName">
+            <summary>
+            Gets or sets the name of the exchange.
+            </summary>
+            <value>The name of the exchange.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.ExchangeType">
+            <summary>
+            Gets or sets the type of the exchange.
+            </summary>
+            <value>The type of the exchange.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.ConnectionString">
+            <summary>
+            Gets or sets the connection string.
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.RetryExchangeName">
+            <summary>
+            Gets or sets the name of the retry exchange.
+            </summary>
+            <value>The name of the retry exchange.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.RetryWaitSecond">
+            <summary>
+            Gets or sets the retry wait second.
+            </summary>
+            <value>The retry wait second.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.DeadExchangeName">
+            <summary>
+            Gets or sets the name of the dead exchange.
+            </summary>
+            <value>The name of the dead exchange.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.DeadQueueName">
+            <summary>
+            Gets or sets the name of the dead queue.
+            </summary>
+            <value>The name of the dead queue.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.RetryTimes">
+            <summary>
+            Gets or sets the retry times.
+            </summary>
+            <value>The retry times.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.AutoRetry">
+            <summary>
+            Gets or sets a value indicating whether [automatic retry].
+            </summary>
+            <value><c>true</c> if [automatic retry]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Uninf.Bus.THZ.THZQueueConfig.ConnectTimeOut">
+            <summary>
+            Gets or sets the connect time out.
+            </summary>
+            <value>The connect time out.</value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,5 @@
+E:\project2015\thzsplit\libs\Uninf.Upload\bin\Release\Uninf.Upload.dll
+E:\project2015\thzsplit\libs\Uninf.Upload\bin\Release\Uninf.Upload.pdb
+E:\project2015\thzsplit\libs\Uninf.Upload\obj\Release\Uninf.Upload.dll
+E:\project2015\thzsplit\libs\Uninf.Upload\obj\Release\Uninf.Upload.pdb
+E:\project2015\thzsplit\libs\Uninf.Upload\bin\Release\Uninf.Upload.XML

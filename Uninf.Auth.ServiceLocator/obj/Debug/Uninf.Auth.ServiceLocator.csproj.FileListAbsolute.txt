@@ -1,0 +1,10 @@
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Uninf.Auth.ServiceLocator.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Uninf.Auth.ServiceLocator.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Uninf.Auth.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Uninf.Auth.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\obj\Debug\Uninf.Auth.ServiceLocator.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\obj\Debug\Uninf.Auth.ServiceLocator.dll
+E:\project2015\thzsplit\libs\Uninf.Auth.ServiceLocator\obj\Debug\Uninf.Auth.ServiceLocator.pdb

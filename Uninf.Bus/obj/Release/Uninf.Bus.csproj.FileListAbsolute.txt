@@ -1,0 +1,8 @@
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Release\Uninf.Bus.dll
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Release\Uninf.Bus.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Release\Newtonsoft.Json.dll
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Release\Newtonsoft.Json.xml
+E:\project2015\thzsplit\libs\Uninf.Bus\obj\Release\Uninf.Bus.dll
+E:\project2015\thzsplit\libs\Uninf.Bus\obj\Release\Uninf.Bus.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus\obj\Release\Uninf.Bus.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Bus\bin\Release\Uninf.Bus.XML

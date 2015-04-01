@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Upload</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Upload.DefaultUploadSettingBase">
+            <summary>
+            内置上传配置类
+            此类实现了分文件夹上传
+            </summary>
+        </member>
+        <member name="T:Uninf.Upload.IUploadSetting">
+            <summary>
+            上传设置接口
+            </summary>
+            <remarks><para>可为不同类型的上传提供不同的此接口的实现。</para>
+            <para>通过此接口，可以设置：</para>
+            <para>文件保存根路径</para>
+            <para>此类型存储的文件夹</para>
+            <para>一个文件夹下最多子文件夹个数，最多文件个数</para>
+            <para>显示在网页上的基本地址</para>
+            <para>保存在库里的数据格式</para></remarks>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetMaxFolderCnt">
+            <summary>
+            一个目录下最多存放多少个子目录
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetMaxFileCnt">
+            <summary>
+            一个目录下最多存放多少个文件
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetImgWebHost">
+            <summary>
+            图片网络访问地址前缀
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetUploadRootPath">
+            <summary>
+            图片保存文件夹根目录
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetUploadIp">
+            <summary>
+            上传服务器地址
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GeneratPathFromRoot(System.String)">
+            <summary>
+            生成一个实际存储地址
+            </summary>
+            <param name="rootDir">The root dir.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetSaveToDBPath(System.String)">
+            <summary>
+            通过一个文件路径，算出他存储在库里应该是
+            </summary>
+            <param name="filepath">The filepath.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetWebShowPath(System.String)">
+            <summary>
+            通过一个文件路径，算出他展示在网页上的地址
+            </summary>
+            <param name="filepath">The filepath.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.GetFileFromDBPath(System.String)">
+            <summary>
+            通过数据库内存储的，获取实际文件
+            </summary>
+            <param name="path">The path.</param>
+            <returns>FileInfo.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUploadSetting.WebPathToFilePath(System.String)">
+            <summary>
+            网络路径到硬盘路径
+            </summary>
+            <param name="webpath">The webpath.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetMaxFolderCnt">
+            <summary>
+            获取一个文件夹内可以存放的子文件夹的个数
+            </summary>
+            <returns>子文件夹个数</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetMaxFileCnt">
+            <summary>
+            获取一个文件夹中最多存放的文件个数
+            </summary>
+            <returns>文件个数</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetImgWebHost">
+            <summary>
+            图片显示在网页上的http基本地址
+            </summary>
+            <returns>System.String.</returns>
+            <remarks>如：http://img.website.com/</remarks>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetUploadRootPath">
+            <summary>
+            保存上传文件的根目录
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetUploadIp">
+            <summary>
+            上穿服务器地址
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GeneratPathFromRoot(System.String)">
+            <summary>
+            生成2级目录保存文件
+            </summary>
+            <param name="rootDir">The root dir.</param>
+            <returns>System.String.</returns>
+            <remarks>如:
+            <para>/root/0/0/file.jpg</para><para>/root/0/1/file.jpg</para><para>/root/1/0/file.jpg</para><para>/root/1/1/file.jpg</para><para>通过设置的文件夹下子文件夹和文件最大数量来计算</para></remarks>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetSaveToDBPath(System.String)">
+            <summary>
+            通过一个文件路径，算出他存储在库里应该是
+            </summary>
+            <param name="filepath">The filepath.</param>
+            <returns>System.String.</returns>
+            <remarks>生成以files:开头的路径格式</remarks>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetWebShowPath(System.String)">
+            <summary>
+            通过一个文件路径，算出他展示在网页上的地址
+            </summary>
+            <param name="filepath">The filepath.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.GetFileFromDBPath(System.String)">
+            <summary>
+            通过数据库内存储的，获取实际文件
+            </summary>
+            <param name="path">The path.</param>
+            <returns>FileInfo.</returns>
+        </member>
+        <member name="M:Uninf.Upload.DefaultUploadSettingBase.WebPathToFilePath(System.String)">
+            <summary>
+            网络路径到硬盘路径
+            </summary>
+            <param name="webpath">The webpath.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Upload.IUpload">
+            <summary>
+            统一上传接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Upload.IUpload.Upload(System.Web.HttpPostedFileBase,System.String,System.Boolean)">
+            <summary>
+            上传文件到指定文件夹
+            </summary>
+            <param name="file">The file.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUpload.Upload(System.Web.HttpPostedFileBase,System.String,System.String,System.Boolean)">
+            <summary>
+            上传到指定文件夹并指定名字
+            </summary>
+            <param name="file">The file.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="filename">The filename.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUpload.Upload(System.IO.Stream,System.String,System.String,System.Boolean)">
+            <summary>
+            Uploads the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="filename">The filename.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.IUpload.Upload(System.Drawing.Image,System.String,System.String,System.Drawing.Imaging.ImageFormat,System.Boolean)">
+            <summary>
+            Uploads the specified img.
+            </summary>
+            <param name="img">The img.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="filename">The filename.</param>
+            <param name="formate">The formate.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Upload.UploaderBase">
+            <summary>
+            内置上传
+            </summary>
+        </member>
+        <member name="F:Uninf.Upload.UploaderBase.setting">
+            <summary>
+            The setting
+            </summary>
+        </member>
+        <member name="M:Uninf.Upload.UploaderBase.#ctor(Uninf.Upload.IUploadSetting)">
+            <summary>
+            实例化上传类
+            </summary>
+            <param name="setting">上传配置</param>
+        </member>
+        <member name="M:Uninf.Upload.UploaderBase.Upload(System.Web.HttpPostedFileBase,System.String,System.Boolean)">
+            <summary>
+            上传文件到指定文件夹
+            </summary>
+            <param name="file">The file.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.UploaderBase.Upload(System.Web.HttpPostedFileBase,System.String,System.String,System.Boolean)">
+            <summary>
+            上传到指定文件夹并指定名字
+            </summary>
+            <param name="file">The file.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="filename">The filename.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.UploaderBase.Upload(System.IO.Stream,System.String,System.String,System.Boolean)">
+            <summary>
+            Uploads the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="filename">The filename.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.UploaderBase.Upload(System.Drawing.Image,System.String,System.String,System.Drawing.Imaging.ImageFormat,System.Boolean)">
+            <summary>
+            Uploads the specified img.
+            </summary>
+            <param name="img">The img.</param>
+            <param name="saveDir">The save dir.</param>
+            <param name="filename">The filename.</param>
+            <param name="formate">The formate.</param>
+            <param name="compute">if set to <c>true</c> [compute].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Upload.UploaderBase.GetRandomName(System.String)">
+            <summary>
+            生成随机文件名
+            </summary>
+            <param name="ext">扩展名</param>
+            <returns>System.String.</returns>
+            <remarks>当前日期年月日时分秒毫秒4位+3随机数</remarks>
+        </member>
+    </members>
+</doc>

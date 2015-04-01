@@ -1,0 +1,17 @@
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\log4net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.Log4Net.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\NLog.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.Log4Net.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.NLog.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\log4net.xml
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\NLog.xml
+E:\project2015\thzsplit\libs\Uninf.Log.Test\obj\Release\Uninf.Log.Test.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Log.Test\obj\Release\Uninf.Log.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Log.Test\obj\Release\Uninf.Log.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.xml
+E:\project2015\thzsplit\libs\Uninf.Log.Test\bin\Release\Uninf.Log.NLog.xml

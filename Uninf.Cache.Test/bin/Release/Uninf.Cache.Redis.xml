@@ -1,0 +1,841 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Cache.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Cache.Redis.IRedisConfig">
+            <summary>
+            redis配置
+            </summary>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetConnection">
+            <summary>
+            获取连接
+            </summary>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetPrefix">
+            <summary>
+            获取key前缀
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetDbIndex">
+            <summary>
+            获取db index
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetConnectTimeOut">
+            <summary>
+            获取连接超时时间
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetSendTimeOut">
+            <summary>
+            获取发送超时时间
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetReciveTimeOut">
+            <summary>
+            获取读取超时时间
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetOnReadError">
+            <summary>
+            读操作错误时执行
+            </summary>
+            <returns>Action&lt;System.String, Exception&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetOnSetError">
+            <summary>
+            写操作错误时执行
+            </summary>
+            <returns>Action&lt;System.String, Exception&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.IRedisConfig.GetClient">
+            <summary>
+            获取redis client
+            </summary>
+            <returns>IRedisClient.</returns>
+        </member>
+        <member name="T:Uninf.Cache.Redis.RedisCache">
+            <summary>
+            RedisCache类
+            </summary>
+        </member>
+        <member name="F:Uninf.Cache.Redis.RedisCache.redis">
+            <summary>
+            The redis
+            </summary>
+        </member>
+        <member name="F:Uninf.Cache.Redis.RedisCache.config">
+            <summary>
+            The configuration
+            </summary>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.#ctor(Uninf.Cache.Redis.IRedisConfig)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Cache.Redis.RedisCache"/> class.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Dispose">
+            <summary>
+            执行与释放或重置非托管资源相关的应用程序定义的任务。
+            </summary>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Get(System.String)">
+            <summary>
+            获取缓存内容
+            </summary>
+            <param name="key">缓存key.</param>
+            <returns>json</returns>
+            <exception cref="T:System.Exception">如果缓存服务出错</exception>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Get``1(System.String)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.GetAll``1(System.String[])">
+            <summary>
+            Gets all.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="keys">The keys.</param>
+            <returns>IDictionary&lt;System.String, T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Set``1(System.String,``0)">
+            <summary>
+            Sets the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Set``1(System.String,``0,System.DateTime)">
+            <summary>
+            Sets the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="expire">The expire.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Increment(System.String,System.UInt32)">
+            <summary>
+            Increments the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Decrement(System.String,System.UInt32)">
+            <summary>
+            Decrements the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Delete(System.String)">
+            <summary>
+            Deletes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ContainsKey(System.String)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if the specified key contains key; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ExpireAt(System.String,System.DateTime)">
+            <summary>
+            Expires at.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="datetime">The datetime.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Get``2(``1)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <param name="key">The key.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Gets``2(``1[])">
+            <summary>
+            Getses the specified keys.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <param name="keys">The keys.</param>
+            <returns>Dictionary&lt;TKey, T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Set``1(``0)">
+            <summary>
+            Sets the specified item.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Set``1(``0,System.DateTime)">
+            <summary>
+            Sets the specified item.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+            <param name="expire">The expire.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Delete``1(``0)">
+            <summary>
+            Deletes the specified item.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Delete``2(``1)">
+            <summary>
+            Deletes the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Deletes``2(``1[])">
+            <summary>
+            Deleteses the specified keys.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <param name="keys">The keys.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.SaveToList``1(``0[])">
+            <summary>
+            Saves to list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.AddToList``1(``0)">
+            <summary>
+            Adds to list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.DeleteFromList``1(``0)">
+            <summary>
+            Deletes from list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ClearList``1">
+            <summary>
+            Clears the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.GetAll``1">
+            <summary>
+            Gets all.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ContainsList``1">
+            <summary>
+            Determines whether this instance contains list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns><c>true</c> if this instance contains list; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.AddToList(System.String,System.String)">
+            <summary>
+            Adds to list.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.RemoveFromList(System.String,System.String)">
+            <summary>
+            Removes from list.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.GetAllFromList(System.String)">
+            <summary>
+            Gets all from list.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>IEnumerable&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.GetPageFromList(System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets the page from list.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <returns>IEnumerable&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.SetItemInList(System.String,System.Int32,System.String)">
+            <summary>
+            Sets the item in list.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.GetItemInList(System.String,System.Int32)">
+            <summary>
+            Gets the item in list.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="index">The index.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ClearList(System.String)">
+            <summary>
+            Clears the list.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.SaveRelated``3(System.String,``2,``1[])">
+            <summary>
+            Saves the related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.AddToRelated``3(System.String,``2,``1)">
+            <summary>
+            Adds to related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.RemoveFromRelated``3(System.String,``2,System.Object)">
+            <summary>
+            Removes from related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.GetAllRelated``3(System.String,``2)">
+            <summary>
+            Gets all related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ClearRelated``3(System.String,``2)">
+            <summary>
+            Clears the related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ContainsRelated``2(System.String,System.Object)">
+            <summary>
+            Determines whether the specified name contains related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="name">The name.</param>
+            <param name="pid">The pid.</param>
+            <returns><c>true</c> if the specified name contains related; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.SaveToPage``1(System.Func{``0,System.Int64},``0[])">
+            <summary>
+            Saves to page.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="score">The score.</param>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.SaveToPage``3(System.String,``2,System.Func{``1,System.Int64},``1[])">
+            <summary>
+            Saves to page.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <param name="score">The score.</param>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.RemoveFromPage``1(``0[])">
+            <summary>
+            Removes from page.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="items">The items.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.RemoveFromPage``3(System.String,``2,``1[])">
+            <summary>
+            Removes from page.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <param name="items">The items.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ClearPage``1">
+            <summary>
+            Clears the page.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ClearPage``3(System.String,``2)">
+            <summary>
+            Clears the page.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.Page``1(System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            Pages the specified skip.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="allCount">All count.</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.PageRelated``3(System.String,System.Object,System.Int32,System.Int32,System.Int64@,System.Boolean)">
+            <summary>
+            Pages the related.
+            </summary>
+            <typeparam name="TMain">The type of the t main.</typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <typeparam name="TMainKey">The type of the t main key.</typeparam>
+            <param name="name">The name.</param>
+            <param name="pid">The pid.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="allCount">All count.</param>
+            <param name="desc">if set to <c>true</c> [desc].</param>
+            <returns>IEnumerable&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ContainsPage``1">
+            <summary>
+            Determines whether this instance contains page.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns><c>true</c> if this instance contains page; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.ContainsRelatedPage``1(System.String,System.Object)">
+            <summary>
+            Determines whether [contains related page] [the specified name].
+            </summary>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if [contains related page] [the specified name]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.OnSetError(System.String,System.Exception)">
+            <summary>
+            写操作报错时执行
+            </summary>
+            <param name="key">The key.</param>
+            <param name="ex">The ex.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisCache.OnReadError(System.String,System.Exception)">
+            <summary>
+            读操作保存时执行
+            </summary>
+            <param name="key">The key.</param>
+            <param name="ex">The ex.</param>
+        </member>
+        <member name="T:Uninf.Cache.Redis.RedisConfig">
+            <summary>
+            Class RedisConfig.
+            </summary>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetConnection">
+            <summary>
+            Gets the connection.
+            </summary>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetPrefix">
+            <summary>
+            Gets the prefix.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetDbIndex">
+            <summary>
+            Gets the index of the database.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetConnectTimeOut">
+            <summary>
+            Gets the connect time out.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetSendTimeOut">
+            <summary>
+            Gets the send time out.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetReciveTimeOut">
+            <summary>
+            Gets the recive time out.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetOnReadError">
+            <summary>
+            Gets the on read error.
+            </summary>
+            <returns>Action&lt;System.String, Exception&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetOnSetError">
+            <summary>
+            Gets the on set error.
+            </summary>
+            <returns>Action&lt;System.String, Exception&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisConfig.GetClient">
+            <summary>
+            Gets the client.
+            </summary>
+            <returns>IRedisClient.</returns>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.ConnectionStrings">
+            <summary>
+            Gets or sets the connection strings.
+            </summary>
+            <value>The connection strings.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.ConnectTimeOut">
+            <summary>
+            Gets or sets the connect time out.
+            </summary>
+            <value>The connect time out.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.SendTimeOut">
+            <summary>
+            Gets or sets the send time out.
+            </summary>
+            <value>The send time out.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.ReciveTimeOut">
+            <summary>
+            Gets or sets the recive time out.
+            </summary>
+            <value>The recive time out.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.KeyPrefix">
+            <summary>
+            Gets or sets the key prefix.
+            </summary>
+            <value>The key prefix.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.DbIndex">
+            <summary>
+            Gets or sets the index of the database.
+            </summary>
+            <value>The index of the database.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.OnReadError">
+            <summary>
+            Gets or sets the on read error.
+            </summary>
+            <value>The on read error.</value>
+        </member>
+        <member name="P:Uninf.Cache.Redis.RedisConfig.OnSetError">
+            <summary>
+            Gets or sets the on set error.
+            </summary>
+            <value>The on set error.</value>
+        </member>
+        <member name="T:Uninf.Cache.Redis.RedisExtensions">
+            <summary>
+            RedisExtensions. 类
+            对ServiceStack.Redis client的扩展方法
+            部分方法与类库中相同，因为类库中是internal所以移出来
+            </summary>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetTypeIdsSetKey``1(ServiceStack.Redis.IRedisClient)">
+            <summary>
+            Gets the type ids set key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetNamespacePrefix(ServiceStack.Redis.IRedisClient)">
+            <summary>
+            Gets the namespace prefix.
+            </summary>
+            <param name="redis">The redis.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetChildReferenceSetKey``2(ServiceStack.Redis.IRedisClient,System.String,System.Object)">
+            <summary>
+            Gets the child reference set key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetChildReferenceSetKey``2(ServiceStack.Redis.IRedisClient,System.Object)">
+            <summary>
+            Gets the child reference set key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="parentId">The parent identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.UrnKey``1(ServiceStack.Redis.IRedisClient,``0)">
+            <summary>
+            Urns the key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetRecentSetKey``1(ServiceStack.Redis.IRedisClient,System.String,System.Object)">
+            <summary>
+            Gets the recent set key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="client">The client.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetRecentSetKey``1(ServiceStack.Redis.IRedisClient)">
+            <summary>
+            Gets the recent set key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="client">The client.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.UrnKey``1(ServiceStack.Redis.IRedisClient,System.Object)">
+            <summary>
+            Urns the key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <param name="id">The identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetUrnKey``1(ServiceStack.Redis.IRedisClient,System.Object)">
+            <summary>
+            Gets the urn key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <param name="id">The identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.StoreNamedRelatedEntities``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object,System.Collections.Generic.List{``1})">
+            <summary>
+            Stores the named related entities.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="children">The children.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.StoreNamedRelatedEntities``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object,``1[])">
+            <summary>
+            Stores the named related entities.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="children">The children.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.DeleteRelatedEntityFix``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.Object,System.Object)">
+            <summary>
+            Deletes the related entity fix.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="childId">The child identifier.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.DeleteNamedRelatedEntity``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object,System.Object)">
+            <summary>
+            Deletes the named related entity.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="childId">The child identifier.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.DeleteNamedRelatedEntities``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object)">
+            <summary>
+            Deletes the named related entities.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetNamedRelatedEntities``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object)">
+            <summary>
+            Gets the named related entities.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <returns>List&lt;TChild&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetNamedRelatedEntitiesCount``2(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object)">
+            <summary>
+            Gets the named related entities count.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TChild">The type of the t child.</typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.AddToRecentsList``1(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object,``0)">
+            <summary>
+            Adds to recents list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetLatestFromRecentsList``1(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Gets the latest from recents list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <returns>List&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisExtensions.GetEarliestFromRecentsList``1(ServiceStack.Redis.Generic.IRedisTypedClient{``0},System.String,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Gets the earliest from recents list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redis">The redis.</param>
+            <param name="name">The name.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <returns>List&lt;T&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Cache.Redis.RedisReourceManager">
+            <summary>
+            RedisReourceManager. 类
+            为在TransctionScope中支持redis写操作事务提供的类
+            </summary>
+        </member>
+        <member name="F:Uninf.Cache.Redis.RedisReourceManager.trans">
+            <summary>
+            The trans
+            </summary>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisReourceManager.#ctor(ServiceStack.Redis.IRedisTransaction,System.Transactions.Transaction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Cache.Redis.RedisReourceManager"/> class.
+            </summary>
+            <param name="trans">The trans.</param>
+            <param name="transaction">The transaction.</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisReourceManager.Commit(System.Transactions.Enlistment)">
+            <summary>
+            通知登记的对象事务正在提交。
+            </summary>
+            <param name="enlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.Enlistment" /> 对象。</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisReourceManager.InDoubt(System.Transactions.Enlistment)">
+            <summary>
+            通知登记的对象事务的状态不确定。
+            </summary>
+            <param name="enlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.Enlistment" /> 对象。</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisReourceManager.Prepare(System.Transactions.PreparingEnlistment)">
+            <summary>
+            通知登记的对象事务正在为提交做准备。
+            </summary>
+            <param name="preparingEnlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.PreparingEnlistment" /> 对象。</param>
+        </member>
+        <member name="M:Uninf.Cache.Redis.RedisReourceManager.Rollback(System.Transactions.Enlistment)">
+            <summary>
+            通知登记的对象事务正在回滚（中止）。
+            </summary>
+            <param name="enlistment">用于将响应发送到事务管理器的 <see cref="T:System.Transactions.Enlistment" /> 对象。</param>
+        </member>
+    </members>
+</doc>

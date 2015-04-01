@@ -1,0 +1,8 @@
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Debug\Uninf.Data.Mongo.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Debug\Uninf.Data.Mongo.pdb
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Debug\MongoDB.Bson.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Debug\MongoDB.Driver.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Debug\MongoDB.Bson.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\bin\Debug\MongoDB.Driver.xml
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\obj\Debug\Uninf.Data.Mongo.dll
+E:\project2015\thzsplit\libs\Uninf.Data.Mongo\obj\Debug\Uninf.Data.Mongo.pdb

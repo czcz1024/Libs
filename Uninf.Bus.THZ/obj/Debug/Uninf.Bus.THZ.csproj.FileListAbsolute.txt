@@ -1,0 +1,13 @@
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Uninf.Bus.THZ.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Uninf.Bus.THZ.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Newtonsoft.Json.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\RabbitMQ.Client.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Uninf.Bus.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Uninf.Bus.RabbitMq.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Uninf.Bus.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Newtonsoft.Json.xml
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\RabbitMQ.Client.xml
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\obj\Debug\Uninf.Bus.THZ.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\obj\Debug\Uninf.Bus.THZ.dll
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\obj\Debug\Uninf.Bus.THZ.pdb
+E:\project2015\thzsplit\libs\Uninf.Bus.THZ\bin\Debug\Uninf.Bus.RabbitMq.pdb

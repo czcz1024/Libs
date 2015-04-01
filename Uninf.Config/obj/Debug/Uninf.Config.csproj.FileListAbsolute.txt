@@ -1,0 +1,4 @@
+E:\project2015\thzsplit\libs\Uninf.Config\bin\Debug\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config\bin\Debug\Uninf.Config.pdb
+E:\project2015\thzsplit\libs\Uninf.Config\obj\Debug\Uninf.Config.dll
+E:\project2015\thzsplit\libs\Uninf.Config\obj\Debug\Uninf.Config.pdb

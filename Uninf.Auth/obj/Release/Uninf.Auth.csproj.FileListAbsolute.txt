@@ -1,0 +1,6 @@
+E:\project2015\thzsplit\libs\Uninf.Auth\bin\Release\Uninf.Auth.dll
+E:\project2015\thzsplit\libs\Uninf.Auth\bin\Release\Uninf.Auth.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth\obj\Release\Uninf.Auth.dll
+E:\project2015\thzsplit\libs\Uninf.Auth\obj\Release\Uninf.Auth.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth\obj\Release\Uninf.Auth.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Auth\bin\Release\Uninf.Auth.XML

@@ -1,0 +1,11 @@
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\Uninf.Model.Automapper.dll
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\Uninf.Model.Automapper.pdb
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\AutoMapper.dll
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\Uninf.Model.dll
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\Uninf.Model.pdb
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\AutoMapper.xml
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\obj\Release\Uninf.Model.Automapper.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\obj\Release\Uninf.Model.Automapper.dll
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\obj\Release\Uninf.Model.Automapper.pdb
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\Uninf.Model.Automapper.XML
+E:\project2015\thzsplit\libs\Uninf.Model.Automapper\bin\Release\Uninf.Model.xml

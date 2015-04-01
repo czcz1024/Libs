@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.Bus</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.Bus.HandlerBase`1">
+            <summary>
+            HandlerBase. 类
+            无返回值消息处理器基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Uninf.Bus.IHandler`1">
+            <summary>
+            IHandler 接口
+            泛型无返回值消息处理器接口
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="T:Uninf.Bus.IHandler">
+            <summary>
+            IHandler 接口
+            消息处理器接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.IHandler.Handle(System.String)">
+            <summary>
+            处理消息
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.IHandler.Sort">
+            <summary>
+            处理器执行顺序
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.IHandler.Async">
+            <summary>
+            是否异步处理器
+            </summary>
+            <returns>异步返回<c>true</c>, 否则返回<c>false</c></returns>
+        </member>
+        <member name="M:Uninf.Bus.IHandler.RoutingKey">
+            <summary>
+            消息处理器对应接受消息的关键字
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.IHandler`1.Handle(`0)">
+            <summary>
+            处理消息
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="F:Uninf.Bus.HandlerBase`1.ser">
+            <summary>
+            The ser
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.#ctor(Uninf.Bus.IMessageSerializer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Uninf.Bus.HandlerBase`1"/> class.
+            </summary>
+            <param name="ser">The ser.</param>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.Handle(`0)">
+            <summary>
+            Handles the specified MSG.
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.Handle(System.String)">
+            <summary>
+            Handles the specified MSG.
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.SkipMsg(System.String)">
+            <summary>
+            是否跳过次消息
+            </summary>
+            <param name="msg">The MSG.</param>
+            <returns>跳过返回<c>true</c>，否则返回<c>false</c></returns>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.SaveMsg(System.String)">
+            <summary>
+            保存消息，默认空实现。如果当处理成功后需要保存消息，可重写次方法
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.Sort">
+            <summary>
+            Sorts this instance.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.Async">
+            <summary>
+            Asynchronouses this instance.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Bus.HandlerBase`1.RoutingKey">
+            <summary>
+            Routings the key.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Uninf.Bus.IHandlerThreadStore">
+            <summary>
+            IHandlerThreadStore 接口
+            监听线程存储接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.IHandlerThreadStore.Add(System.Type,System.Int32,System.Object)">
+            <summary>
+            添加
+            </summary>
+            <param name="type">处理器类型</param>
+            <param name="threadid">线程id</param>
+            <param name="c">线程cancel对象</param>
+        </member>
+        <member name="M:Uninf.Bus.IHandlerThreadStore.Delete(System.Type,System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="type">处理器类型</param>
+            <param name="threadid">线程id</param>
+        </member>
+        <member name="M:Uninf.Bus.IHandlerThreadStore.Get(System.Type,System.Int32)">
+            <summary>
+            获取
+            </summary>
+            <param name="type">处理器类型</param>
+            <param name="threadid">线程id</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:Uninf.Bus.IHandlerThreadStore.GetAll">
+            <summary>
+            全部
+            </summary>
+            <returns>IDictionary&lt;Type, List&lt;Tuple&lt;System.Int32, System.Object&gt;&gt;&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Bus.IListener">
+            <summary>
+            IListener 接口
+            消息队列服务监听接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.IListener.Start(Uninf.Bus.IHandler)">
+            <summary>
+            开始一个线程监听
+            </summary>
+            <param name="handler">处理器</param>
+        </member>
+        <member name="M:Uninf.Bus.IListener.Stop(System.Type,System.Int32)">
+            <summary>
+            停止一个监听线程
+            </summary>
+            <param name="type">处理器类型</param>
+            <param name="threadId">线程id</param>
+        </member>
+        <member name="M:Uninf.Bus.IListener.StopAll(System.Type)">
+            <summary>
+            全部停止某种处理器的监听线程
+            </summary>
+            <param name="type">处理器类型</param>
+        </member>
+        <member name="M:Uninf.Bus.IListener.DeleteAsyncHandler(Uninf.Bus.IHandler)">
+            <summary>
+            异步转同步
+            </summary>
+            <param name="handler">处理器</param>
+        </member>
+        <member name="T:Uninf.Bus.IMessageBus">
+            <summary>
+            IMessageBus 接口
+            消息总线
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.IMessageBus.Send``1(``0)">
+            <summary>
+            发送无返回值消息
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <param name="msg">消息内容</param>
+        </member>
+        <member name="M:Uninf.Bus.IMessageBus.Call``2(``0)">
+            <summary>
+            发送有返回值消息，并返回返回值
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <typeparam name="TResult">返回值类型</typeparam>
+            <param name="msg">消息内容</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:Uninf.Bus.IMessageSerializer">
+            <summary>
+            IMessageSerializer 接口
+            消息内容序列化接口
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.IMessageSerializer.Serialize``1(``0)">
+            <summary>
+            序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.IMessageSerializer.Deserialize``1(System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="str">The string.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="T:Uninf.Bus.IResultHandler`2">
+            <summary>
+            IResultHandler 接口
+            有返回值消息处理器泛型接口
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <typeparam name="TResult">返回值类型</typeparam>
+        </member>
+        <member name="M:Uninf.Bus.IResultHandler`2.Handle(`0)">
+            <summary>
+            处理消息
+            </summary>
+            <param name="msg">The MSG.</param>
+            <returns>TResult.</returns>
+        </member>
+        <member name="T:Uninf.Bus.JsonMessageSerializer">
+            <summary>
+            JsonMessageSerializer. 类
+            Json序列化
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.JsonMessageSerializer.Serialize``1(``0)">
+            <summary>
+            Serializes the specified MSG.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Uninf.Bus.JsonMessageSerializer.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the specified string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="str">The string.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="T:Uninf.Bus.MessageBusBase">
+            <summary>
+            MessageBusBase. 类
+            总线基类
+            </summary>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.Send``1(``0)">
+            <summary>
+            发送无返回值消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.HandlerProcessSuccess``1(``0)">
+            <summary>
+            无消息处理成功
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.SendToQueueSuccess``1(``0)">
+            <summary>
+            发送到消息队列成功
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.BeforeSendToQueue``1(``0)">
+            <summary>
+            发送到消息队列之前
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.SendToQueue``1(``0)">
+            <summary>
+            发送到消息队列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.Call``2(``0)">
+            <summary>
+            发送有返回值消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult">The type of the t result.</typeparam>
+            <param name="msg">The MSG.</param>
+            <returns>TResult.</returns>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.GetHandlers``1">
+            <summary>
+            获取某无返回值消息的所有处理器
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <returns>IEnumerable&lt;IHandler&lt;T&gt;&gt;.</returns>
+        </member>
+        <member name="M:Uninf.Bus.MessageBusBase.GetResultHandler``2">
+            <summary>
+            获取一个有返回值消息的处理器
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <typeparam name="TResult">返回值类型</typeparam>
+            <returns>IResultHandler&lt;T, TResult&gt;.</returns>
+        </member>
+        <member name="T:Uninf.Bus.ResultHandlerBase`2">
+            <summary>
+            ResultHandlerBase. 类
+            有返回值消息处理器基类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult">The type of the t result.</typeparam>
+        </member>
+        <member name="M:Uninf.Bus.ResultHandlerBase`2.Handle(`0)">
+            <summary>
+            处理消息
+            </summary>
+            <param name="msg">The MSG.</param>
+            <returns>TResult.</returns>
+        </member>
+        <member name="M:Uninf.Bus.ResultHandlerBase`2.Handle(System.String)">
+            <summary>
+            Handles the specified MSG.
+            </summary>
+            <param name="msg">The MSG.</param>
+            <exception cref="T:System.Exception">带有返回值的处理器，不应该调用此方法</exception>
+        </member>
+        <member name="M:Uninf.Bus.ResultHandlerBase`2.Sort">
+            <summary>
+            Sorts this instance.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Uninf.Bus.ResultHandlerBase`2.Async">
+            <summary>
+            Asynchronouses this instance.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Uninf.Bus.ResultHandlerBase`2.RoutingKey">
+            <summary>
+            Routings the key.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+    </members>
+</doc>

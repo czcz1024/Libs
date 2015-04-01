@@ -1,0 +1,16 @@
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Upload.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Upload.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Moq.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Images.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Upload.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\CodeCarvings.Piczard.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Jillzhang.GifUtility.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Images.pdb
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Upload.pdb
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Moq.xml
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\CodeCarvings.Piczard.xml
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\obj\Release\Uninf.Upload.Test.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\obj\Release\Uninf.Upload.Test.dll
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\obj\Release\Uninf.Upload.Test.pdb
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Images.xml
+E:\project2015\thzsplit\libs\Uninf.Upload.Test\bin\Release\Uninf.Upload.xml

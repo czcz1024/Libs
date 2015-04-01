@@ -1,0 +1,4 @@
+E:\project2015\thzsplit\libs\Uninf.Auth\bin\Debug\Uninf.Auth.dll
+E:\project2015\thzsplit\libs\Uninf.Auth\bin\Debug\Uninf.Auth.pdb
+E:\project2015\thzsplit\libs\Uninf.Auth\obj\Debug\Uninf.Auth.dll
+E:\project2015\thzsplit\libs\Uninf.Auth\obj\Debug\Uninf.Auth.pdb

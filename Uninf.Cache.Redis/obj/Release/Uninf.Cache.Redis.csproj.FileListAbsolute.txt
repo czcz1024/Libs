@@ -1,0 +1,16 @@
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\Uninf.Cache.Redis.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\Uninf.Cache.Redis.pdb
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Common.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Interfaces.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Redis.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Text.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\Uninf.Cache.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\Uninf.Cache.pdb
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Common.xml
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Redis.xml
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\ServiceStack.Text.xml
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\obj\Release\Uninf.Cache.Redis.csprojResolveAssemblyReference.cache
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\obj\Release\Uninf.Cache.Redis.dll
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\obj\Release\Uninf.Cache.Redis.pdb
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\Uninf.Cache.Redis.XML
+E:\project2015\thzsplit\libs\Uninf.Cache.Redis\bin\Release\Uninf.Cache.xml

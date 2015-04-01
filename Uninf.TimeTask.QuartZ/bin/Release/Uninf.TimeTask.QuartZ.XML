@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uninf.TimeTask.QuartZ</name>
+    </assembly>
+    <members>
+        <member name="T:Uninf.TimeTask.QuartZ.IQuartZJob">
+            <summary>
+            QuartZ定时任务接口
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.IQuartZJob.GetJob">
+            <summary>
+            任务详情
+            </summary>
+            <returns>IJobDetail.</returns>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.IQuartZJob.GetTrigger">
+            <summary>
+            触发器
+            </summary>
+            <returns>ITrigger.</returns>
+        </member>
+        <member name="T:Uninf.TimeTask.QuartZ.QuartZServer">
+            <summary>
+            QuartZ定时任务服务管理
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZServer.StartAll">
+            <summary>
+            启动所有定时任务
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZServer.StopAll">
+            <summary>
+            停止所有定时任务
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZServer.GetJobs">
+            <summary>
+            获取所有任务
+            </summary>
+            <returns>IEnumerable&lt;IQuartZJob&gt;.</returns>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZServer.ConfigScheduler(Quartz.IScheduler)">
+            <summary>
+            设置QuartZ Scheduler对象
+            </summary>
+            <param name="scheduler">The scheduler.</param>
+        </member>
+        <member name="T:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase">
+            <summary>
+            Class QuartZTimeTaskBase.
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase.Exec">
+            <summary>
+            执行任务
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase.RunTime">
+            <summary>
+            执行时间
+            </summary>
+            <returns>Corn表达式</returns>
+        </member>
+        <member name="F:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase.JobContext">
+            <summary>
+            The job context
+            </summary>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase.Execute(Quartz.IJobExecutionContext)">
+            <summary>
+            Called by the <see cref="T:Quartz.IScheduler" /> when a <see cref="T:Quartz.ITrigger" />
+            fires that is associated with the <see cref="T:Quartz.IJob" />.
+            </summary>
+            <param name="context">The execution context.</param>
+            <remarks>The implementation may wish to set a  result object on the
+            JobExecutionContext before this method exits.  The result itself
+            is meaningless to Quartz, but may be informative to
+            <see cref="T:Quartz.IJobListener" />s or
+            <see cref="T:Quartz.ITriggerListener" />s that are watching the job's
+            execution.</remarks>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase.GetJob">
+            <summary>
+            任务详情
+            </summary>
+            <returns>IJobDetail.</returns>
+        </member>
+        <member name="M:Uninf.TimeTask.QuartZ.QuartZTimeTaskBase.GetTrigger">
+            <summary>
+            触发器
+            </summary>
+            <returns>ITrigger.</returns>
+        </member>
+    </members>
+</doc>
